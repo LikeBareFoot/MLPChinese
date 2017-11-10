@@ -1,0 +1,32 @@
+<style>
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    text-align: center;
+}
+
+.ch {
+    font-size: 15pt;
+    margin-right: 10pt;
+}
+.word {
+    margin-right: 10pt;
+}
+.pron {
+    font-size: 10pt
+}
+
+
+.big {
+    font-size: 15pt
+}
+.small {
+    font-size: 10pt
+}
+</style>
