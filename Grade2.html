@@ -25,13 +25,57 @@ td {
 
 
 .big {
-    font-size: 15pt
+    font-size: 15pt;
+    position: relative;
+    display: inline-block;
 }
 .small {
     font-size: 10pt
 }
-</style>
-<script>
+
+.big .tooltiptext {
+    visibility: hidden;
+    width: 420px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.big .tooltiptext .word {
+    margin-right: 10px;
+}
+
+/* Tooltip arrow */
+.big .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.big:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+</style><script>
 <!--
 function toggleIdVisibility(id) {
   var e = document.getElementById(id);
@@ -71,75 +115,75 @@ function toggleDisplay(element, className) {
 </head><body>
 <button onclick="toggleDisplay(this, 'small')" value='1'>隐藏拼音</button><table><tbody><tr>
 <td>
-<div id="pron1" class="small">yè</div><div class="big" onclick="toggleIdVisibility('pron1')">夜</div></td>
+<div id="pron1" class="small">yè</div><div class="big" onclick="toggleIdVisibility('pron1')">夜<table class="tooltiptext"><tr><td><span class='word'>秉烛夜游</span><span class='word'>夜幕</span><span class='word'>昼夜</span></td></tr></table></div></td>
 <td>
-<div id="pron2" class="small">wǎn</div><div class="big" onclick="toggleIdVisibility('pron2')">晚</div></td>
+<div id="pron2" class="small">wǎn</div><div class="big" onclick="toggleIdVisibility('pron2')">晚<table class="tooltiptext"><tr><td><span class='word'>桑榆晚景</span></td></tr></table></div></td>
 <td>
-<div id="pron3" class="small">jǐng</div><div class="big" onclick="toggleIdVisibility('pron3')">井</div></td>
+<div id="pron3" class="small">jǐng</div><div class="big" onclick="toggleIdVisibility('pron3')">井<table class="tooltiptext"><tr><td><span class='word'>窨井</span></td></tr></table></div></td>
 <td>
-<div id="pron4" class="small">jí</div><div class="big" onclick="toggleIdVisibility('pron4')">急</div></td>
+<div id="pron4" class="small">jí</div><div class="big" onclick="toggleIdVisibility('pron4')">急<table class="tooltiptext"><tr><td><span class='word'>湍急</span></td></tr></table></div></td>
 <td>
-<div id="pron5" class="small">dé</div><div class="big" onclick="toggleIdVisibility('pron5')">得</div></td>
+<div id="pron5" class="small">dé</div><div class="big" onclick="toggleIdVisibility('pron5')">得<table class="tooltiptext"><tr><td><span class='word'>相得益彰</span><span class='word'>唾手可得</span><span class='word'>值得</span><span class='word'>获得</span></td></tr></table></div></td>
 <td>
-<div id="pron6" class="small">jiào</div><div class="big" onclick="toggleIdVisibility('pron6')">叫</div></td>
+<div id="pron6" class="small">jiào</div><div class="big" onclick="toggleIdVisibility('pron6')">叫<table class="tooltiptext"><tr><td><span class='word'>嘶叫</span></td></tr></table></div></td>
 <td>
-<div id="pron7" class="small">zāo</div><div class="big" onclick="toggleIdVisibility('pron7')">糟</div></td>
+<div id="pron7" class="small">zāo</div><div class="big" onclick="toggleIdVisibility('pron7')">糟<table class="tooltiptext"><tr><td><span class='word'>糟蹋</span><span class='word'>糟糕</span></td></tr></table></div></td>
 <td>
 <div id="pron8" class="small">lián</div><div class="big" onclick="toggleIdVisibility('pron8')">连</div></td>
 </tr>
 <tr>
 <td>
-<div id="pron9" class="small">máng</div><div class="big" onclick="toggleIdVisibility('pron9')">忙</div></td>
+<div id="pron9" class="small">máng</div><div class="big" onclick="toggleIdVisibility('pron9')">忙<table class="tooltiptext"><tr><td><span class='word'>帮忙</span><span class='word'>忙碌</span></td></tr></table></div></td>
 <td>
 <div id="pron10" class="small">gēn</div><div class="big" onclick="toggleIdVisibility('pron10')">跟</div></td>
 <td>
-<div id="pron11" class="small">lǎo</div><div class="big" onclick="toggleIdVisibility('pron11')">老</div></td>
+<div id="pron11" class="small">lǎo</div><div class="big" onclick="toggleIdVisibility('pron11')">老<table class="tooltiptext"><tr><td><span class='word'>衰老</span><span class='word'>耆寿耇老</span><span class='word'>斫轮老手</span></td></tr></table></div></td>
 <td>
 <div id="pron12" class="small">kuài</div><div class="big" onclick="toggleIdVisibility('pron12')">快</div></td>
 <td>
-<div id="pron13" class="small">dào</div><div class="big" onclick="toggleIdVisibility('pron13')">倒</div></td>
+<div id="pron13" class="small">dào</div><div class="big" onclick="toggleIdVisibility('pron13')">倒<table class="tooltiptext"><tr><td><span class='word'>本末倒置</span><span class='word'>跌倒</span><span class='word'>解民倒悬</span><span class='word'>倒霉</span><span class='word'>颠三倒四</span><span class='word'>不倒翁</span></td></tr></table></div></td>
 <td>
 <div id="pron14" class="small">lā</div><div class="big" onclick="toggleIdVisibility('pron14')">拉</div></td>
 <td>
-<div id="pron15" class="small">zhù</div><div class="big" onclick="toggleIdVisibility('pron15')">住</div></td>
+<div id="pron15" class="small">zhù</div><div class="big" onclick="toggleIdVisibility('pron15')">住<table class="tooltiptext"><tr><td><span class='word'>住宅</span><span class='word'>住址</span></td></tr></table></div></td>
 <td>
 <div id="pron16" class="small">lìng</div><div class="big" onclick="toggleIdVisibility('pron16')">另</div></td>
 </tr>
 <tr>
 <td>
-<div id="pron17" class="small">jiē</div><div class="big" onclick="toggleIdVisibility('pron17')">接</div></td>
+<div id="pron17" class="small">jiē</div><div class="big" onclick="toggleIdVisibility('pron17')">接<table class="tooltiptext"><tr><td><span class='word'>应接不暇</span><span class='word'>衔接</span></td></tr></table></div></td>
 <td>
 <div id="pron18" class="small">yuè</div><div class="big" onclick="toggleIdVisibility('pron18')">越</div></td>
 <td>
-<div id="pron19" class="small">zhǎng</div><div class="big" onclick="toggleIdVisibility('pron19')">长</div></td>
+<div id="pron19" class="small">zhǎng</div><div class="big" onclick="toggleIdVisibility('pron19')">长<table class="tooltiptext"><tr><td><span class='word'>长吁短叹</span><span class='word'>溘然长逝</span><span class='word'>擅长</span></td></tr></table></div></td>
 <td>
-<div id="pron20" class="small">zhí</div><div class="big" onclick="toggleIdVisibility('pron20')">直</div></td>
+<div id="pron20" class="small">zhí</div><div class="big" onclick="toggleIdVisibility('pron20')">直<table class="tooltiptext"><tr><td><span class='word'>陡直</span><span class='word'>耿直</span><span class='word'>憨直</span><span class='word'>秉笔直书</span><span class='word'>戆直</span></td></tr></table></div></td>
 <td>
 <div id="pron21" class="small">zuì</div><div class="big" onclick="toggleIdVisibility('pron21')">最</div></td>
 <td>
-<div id="pron22" class="small">shēn</div><div class="big" onclick="toggleIdVisibility('pron22')">伸</div></td>
+<div id="pron22" class="small">shēn</div><div class="big" onclick="toggleIdVisibility('pron22')">伸<table class="tooltiptext"><tr><td><span class='word'>延伸</span></td></tr></table></div></td>
 <td>
-<div id="pron23" class="small">gāng</div><div class="big" onclick="toggleIdVisibility('pron23')">刚</div></td>
+<div id="pron23" class="small">gāng</div><div class="big" onclick="toggleIdVisibility('pron23')">刚<table class="tooltiptext"><tr><td><span class='word'>刚愎自用</span></td></tr></table></div></td>
 <td>
-<div id="pron24" class="small">pèng</div><div class="big" onclick="toggleIdVisibility('pron24')">碰</div></td>
+<div id="pron24" class="small">pèng</div><div class="big" onclick="toggleIdVisibility('pron24')">碰<table class="tooltiptext"><tr><td><span class='word'>碰撞</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
 <div id="pron25" class="small">tái</div><div class="big" onclick="toggleIdVisibility('pron25')">抬</div></td>
 <td>
-<div id="pron26" class="small">chuǎn</div><div class="big" onclick="toggleIdVisibility('pron26')">喘</div></td>
+<div id="pron26" class="small">chuǎn</div><div class="big" onclick="toggleIdVisibility('pron26')">喘<table class="tooltiptext"><tr><td><span class='word'>苟延残喘</span></td></tr></table></div></td>
 <td>
-<div id="pron27" class="small">yòng</div><div class="big" onclick="toggleIdVisibility('pron27')">用</div></td>
+<div id="pron27" class="small">yòng</div><div class="big" onclick="toggleIdVisibility('pron27')">用<table class="tooltiptext"><tr><td><span class='word'>大材小用</span><span class='word'>刚愎自用</span><span class='word'>占用</span><span class='word'>滥用</span></td></tr></table></div></td>
 <td>
-<div id="pron28" class="small">gù</div><div class="big" onclick="toggleIdVisibility('pron28')">故</div></td>
+<div id="pron28" class="small">gù</div><div class="big" onclick="toggleIdVisibility('pron28')">故<table class="tooltiptext"><tr><td><span class='word'>欲擒故纵</span><span class='word'>故障</span><span class='word'>缘故</span></td></tr></table></div></td>
 <td>
-<div id="pron29" class="small">huī</div><div class="big" onclick="toggleIdVisibility('pron29')">灰</div></td>
+<div id="pron29" class="small">huī</div><div class="big" onclick="toggleIdVisibility('pron29')">灰<table class="tooltiptext"><tr><td><span class='word'>灰尘</span><span class='word'>灰烬</span></td></tr></table></div></td>
 <td>
-<div id="pron30" class="small">bāng</div><div class="big" onclick="toggleIdVisibility('pron30')">帮</div></td>
+<div id="pron30" class="small">bāng</div><div class="big" onclick="toggleIdVisibility('pron30')">帮<table class="tooltiptext"><tr><td><span class='word'>帮忙</span></td></tr></table></div></td>
 <td>
 <div id="pron31" class="small">wán</div><div class="big" onclick="toggleIdVisibility('pron31')">完</div></td>
 <td>
-<div id="pron32" class="small">chē</div><div class="big" onclick="toggleIdVisibility('pron32')">车</div></td>
+<div id="pron32" class="small">chē</div><div class="big" onclick="toggleIdVisibility('pron32')">车<table class="tooltiptext"><tr><td><span class='word'>杯水车薪</span><span class='word'>列车</span><span class='word'>车轱辘话</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
@@ -157,19 +201,19 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron39" class="small">fān</div><div class="big" onclick="toggleIdVisibility('pron39')">翻</div></td>
 <td>
-<div id="pron40" class="small">sōng</div><div class="big" onclick="toggleIdVisibility('pron40')">松</div></td>
+<div id="pron40" class="small">sōng</div><div class="big" onclick="toggleIdVisibility('pron40')">松<table class="tooltiptext"><tr><td><span class='word'>蓬松</span><span class='word'>餐松饮涧</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron41" class="small">yǐ</div><div class="big" onclick="toggleIdVisibility('pron41')">以</div></td>
+<div id="pron41" class="small">yǐ</div><div class="big" onclick="toggleIdVisibility('pron41')">以<table class="tooltiptext"><tr><td><span class='word'>如愿以偿</span><span class='word'>相濡以沫</span><span class='word'>以儆效尤</span></td></tr></table></div></td>
 <td>
-<div id="pron42" class="small">jiāo</div><div class="big" onclick="toggleIdVisibility('pron42')">浇</div></td>
+<div id="pron42" class="small">jiāo</div><div class="big" onclick="toggleIdVisibility('pron42')">浇<table class="tooltiptext"><tr><td><span class='word'>浇灌</span></td></tr></table></div></td>
 <td>
-<div id="pron43" class="small">bá</div><div class="big" onclick="toggleIdVisibility('pron43')">拔</div></td>
+<div id="pron43" class="small">bá</div><div class="big" onclick="toggleIdVisibility('pron43')">拔<table class="tooltiptext"><tr><td><span class='word'>剑拔弩张</span><span class='word'>拔葵啖枣</span></td></tr></table></div></td>
 <td>
-<div id="pron44" class="small">zhuō</div><div class="big" onclick="toggleIdVisibility('pron44')">捉</div></td>
+<div id="pron44" class="small">zhuō</div><div class="big" onclick="toggleIdVisibility('pron44')">捉<table class="tooltiptext"><tr><td><span class='word'>瓮中捉鳖</span></td></tr></table></div></td>
 <td>
-<div id="pron45" class="small">shén</div><div class="big" onclick="toggleIdVisibility('pron45')">什</div></td>
+<div id="pron45" class="small">shén</div><div class="big" onclick="toggleIdVisibility('pron45')">什<table class="tooltiptext"><tr><td><span class='word'>什叶派</span></td></tr></table></div></td>
 <td>
 <div id="pron46" class="small">è</div><div class="big" onclick="toggleIdVisibility('pron46')">饿</div></td>
 <td>
@@ -179,9 +223,9 @@ function toggleDisplay(element, className) {
 </tr>
 <tr>
 <td>
-<div id="pron49" class="small">méi</div><div class="big" onclick="toggleIdVisibility('pron49')">没</div></td>
+<div id="pron49" class="small">méi</div><div class="big" onclick="toggleIdVisibility('pron49')">没<table class="tooltiptext"><tr><td><span class='word'>淹没</span></td></tr></table></div></td>
 <td>
-<div id="pron50" class="small">diǎn</div><div class="big" onclick="toggleIdVisibility('pron50')">点</div></td>
+<div id="pron50" class="small">diǎn</div><div class="big" onclick="toggleIdVisibility('pron50')">点<table class="tooltiptext"><tr><td><span class='word'>优点</span><span class='word'>点缀</span><span class='word'>点厾</span></td></tr></table></div></td>
 <td>
 <div id="pron51" class="small">ba</div><div class="big" onclick="toggleIdVisibility('pron51')">吧</div></td>
 <td>
@@ -189,29 +233,29 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron53" class="small">dān</div><div class="big" onclick="toggleIdVisibility('pron53')">担</div></td>
 <td>
-<div id="pron54" class="small">wèn</div><div class="big" onclick="toggleIdVisibility('pron54')">问</div></td>
+<div id="pron54" class="small">wèn</div><div class="big" onclick="toggleIdVisibility('pron54')">问<table class="tooltiptext"><tr><td><span class='word'>不耻下问</span></td></tr></table></div></td>
 <td>
 <div id="pron55" class="small">nǎ</div><div class="big" onclick="toggleIdVisibility('pron55')">哪</div></td>
 <td>
-<div id="pron56" class="small">zì</div><div class="big" onclick="toggleIdVisibility('pron56')">自</div></td>
+<div id="pron56" class="small">zì</div><div class="big" onclick="toggleIdVisibility('pron56')">自<table class="tooltiptext"><tr><td><span class='word'>刚愎自用</span><span class='word'>自卑</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
 <div id="pron57" class="small">jǐ</div><div class="big" onclick="toggleIdVisibility('pron57')">己</div></td>
 <td>
-<div id="pron58" class="small">cái</div><div class="big" onclick="toggleIdVisibility('pron58')">才</div></td>
+<div id="pron58" class="small">cái</div><div class="big" onclick="toggleIdVisibility('pron58')">才<table class="tooltiptext"><tr><td><span class='word'>才疏学浅</span></td></tr></table></div></td>
 <td>
-<div id="pron59" class="small">néng</div><div class="big" onclick="toggleIdVisibility('pron59')">能</div></td>
+<div id="pron59" class="small">néng</div><div class="big" onclick="toggleIdVisibility('pron59')">能<table class="tooltiptext"><tr><td><span class='word'>能够</span><span class='word'>德薄能鲜</span></td></tr></table></div></td>
 <td>
-<div id="pron60" class="small">diào</div><div class="big" onclick="toggleIdVisibility('pron60')">钓</div></td>
+<div id="pron60" class="small">diào</div><div class="big" onclick="toggleIdVisibility('pron60')">钓<table class="tooltiptext"><tr><td><span class='word'>沽名钓誉</span></td></tr></table></div></td>
 <td>
 <div id="pron61" class="small">zǎo</div><div class="big" onclick="toggleIdVisibility('pron61')">早</div></td>
 <td>
-<div id="pron62" class="small">chén</div><div class="big" onclick="toggleIdVisibility('pron62')">晨</div></td>
+<div id="pron62" class="small">chén</div><div class="big" onclick="toggleIdVisibility('pron62')">晨<table class="tooltiptext"><tr><td><span class='word'>寥若晨星</span></td></tr></table></div></td>
 <td>
-<div id="pron63" class="small">tài</div><div class="big" onclick="toggleIdVisibility('pron63')">太</div></td>
+<div id="pron63" class="small">tài</div><div class="big" onclick="toggleIdVisibility('pron63')">太<table class="tooltiptext"><tr><td><span class='word'>"本义是指太阳的影子。相持既久</span><span class='word'>佘太君</span></td></tr></table></div></td>
 <td>
-<div id="pron64" class="small">yáng</div><div class="big" onclick="toggleIdVisibility('pron64')">阳</div></td>
+<div id="pron64" class="small">yáng</div><div class="big" onclick="toggleIdVisibility('pron64')">阳<table class="tooltiptext"><tr><td><span class='word'>"本义是指太阳的影子。相持既久</span><span class='word'>残阳</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
@@ -221,11 +265,11 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron67" class="small">gē</div><div class="big" onclick="toggleIdVisibility('pron67')">哥</div></td>
 <td>
-<div id="pron68" class="small">jìng</div><div class="big" onclick="toggleIdVisibility('pron68')">静</div></td>
+<div id="pron68" class="small">jìng</div><div class="big" onclick="toggleIdVisibility('pron68')">静<table class="tooltiptext"><tr><td><span class='word'>寂静</span><span class='word'>静寂</span><span class='word'>恬静</span><span class='word'>幽静</span><span class='word'>静谧</span><span class='word'>澄心静虑</span></td></tr></table></div></td>
 <td>
-<div id="pron69" class="small">děng</div><div class="big" onclick="toggleIdVisibility('pron69')">等</div></td>
+<div id="pron69" class="small">děng</div><div class="big" onclick="toggleIdVisibility('pron69')">等<table class="tooltiptext"><tr><td><span class='word'>躐等</span></td></tr></table></div></td>
 <td>
-<div id="pron70" class="small">huà</div><div class="big" onclick="toggleIdVisibility('pron70')">话</div></td>
+<div id="pron70" class="small">huà</div><div class="big" onclick="toggleIdVisibility('pron70')">话<table class="tooltiptext"><tr><td><span class='word'>话题</span><span class='word'>车轱辘话</span></td></tr></table></div></td>
 <td>
 <div id="pron71" class="small">qīng</div><div class="big" onclick="toggleIdVisibility('pron71')">蜻</div></td>
 <td>
@@ -237,7 +281,7 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron74" class="small">yǐ</div><div class="big" onclick="toggleIdVisibility('pron74')">已</div></td>
 <td>
-<div id="pron75" class="small">jīng</div><div class="big" onclick="toggleIdVisibility('pron75')">经</div></td>
+<div id="pron75" class="small">jīng</div><div class="big" onclick="toggleIdVisibility('pron75')">经<table class="tooltiptext"><tr><td><span class='word'>经历</span></td></tr></table></div></td>
 <td>
 <div id="pron76" class="small">hú</div><div class="big" onclick="toggleIdVisibility('pron76')">蝴</div></td>
 <td>
@@ -251,33 +295,33 @@ function toggleDisplay(element, className) {
 </tr>
 <tr>
 <td>
-<div id="pron81" class="small">wèi</div><div class="big" onclick="toggleIdVisibility('pron81')">为</div></td>
+<div id="pron81" class="small">wèi</div><div class="big" onclick="toggleIdVisibility('pron81')">为<table class="tooltiptext"><tr><td><span class='word'>助纣为虐</span><span class='word'>肆意妄为</span><span class='word'>恣意妄为</span><span class='word'>歃血为盟</span></td></tr></table></div></td>
 <td>
 <div id="pron82" class="small">zhuān</div><div class="big" onclick="toggleIdVisibility('pron82')">专</div></td>
 <td>
-<div id="pron83" class="small">xīn</div><div class="big" onclick="toggleIdVisibility('pron83')">心</div></td>
+<div id="pron83" class="small">xīn</div><div class="big" onclick="toggleIdVisibility('pron83')">心<table class="tooltiptext"><tr><td><span class='word'>忧心如焚</span><span class='word'>忠心耿耿</span><span class='word'>呕心沥血</span><span class='word'>沁人心脾</span><span class='word'>心旷神怡</span><span class='word'>野心勃勃</span><span class='word'>关心民瘼</span><span class='word'>心肠</span><span class='word'>煞费苦心</span><span class='word'>衷心</span><span class='word'>蛇蝎心肠</span><span class='word'>核心</span><span class='word'>心扉</span><span class='word'>心猿意马</span><span class='word'>澄心静虑</span></td></tr></table></div></td>
 <td>
-<div id="pron84" class="small">ér</div><div class="big" onclick="toggleIdVisibility('pron84')">儿</div></td>
+<div id="pron84" class="small">ér</div><div class="big" onclick="toggleIdVisibility('pron84')">儿<table class="tooltiptext"><tr><td><span class='word'>婴儿</span></td></tr></table></div></td>
 <td>
-<div id="pron85" class="small">tíng</div><div class="big" onclick="toggleIdVisibility('pron85')">停</div></td>
+<div id="pron85" class="small">tíng</div><div class="big" onclick="toggleIdVisibility('pron85')">停<table class="tooltiptext"><tr><td><span class='word'>暂停</span></td></tr></table></div></td>
 <td>
 <div id="pron86" class="small">xiàng</div><div class="big" onclick="toggleIdVisibility('pron86')">像</div></td>
 <td>
-<div id="pron87" class="small">bù</div><div class="big" onclick="toggleIdVisibility('pron87')">步</div></td>
+<div id="pron87" class="small">bù</div><div class="big" onclick="toggleIdVisibility('pron87')">步<table class="tooltiptext"><tr><td><span class='word'>步骤</span><span class='word'>步伐</span><span class='word'>步履蹒跚</span></td></tr></table></div></td>
 <td>
-<div id="pron88" class="small">dòng</div><div class="big" onclick="toggleIdVisibility('pron88')">动</div></td>
+<div id="pron88" class="small">dòng</div><div class="big" onclick="toggleIdVisibility('pron88')">动<table class="tooltiptext"><tr><td><span class='word'>震动</span><span class='word'>轰动</span><span class='word'>蠕动</span><span class='word'>挪动</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron89" class="small">lì</div><div class="big" onclick="toggleIdVisibility('pron89')">力</div></td>
+<div id="pron89" class="small">lì</div><div class="big" onclick="toggleIdVisibility('pron89')">力<table class="tooltiptext"><tr><td><span class='word'>魅力</span><span class='word'>殚谋戮力</span><span class='word'>毅力</span><span class='word'>殚精毕力</span></td></tr></table></div></td>
 <td>
 <div id="pron90" class="small">hú</div><div class="big" onclick="toggleIdVisibility('pron90')">狐</div></td>
 <td>
 <div id="pron91" class="small">lí</div><div class="big" onclick="toggleIdVisibility('pron91')">狸</div></td>
 <td>
-<div id="pron92" class="small">wō</div><div class="big" onclick="toggleIdVisibility('pron92')">窝</div></td>
+<div id="pron92" class="small">wō</div><div class="big" onclick="toggleIdVisibility('pron92')">窝<table class="tooltiptext"><tr><td><span class='word'>胳肢窝</span></td></tr></table></div></td>
 <td>
-<div id="pron93" class="small">dòng</div><div class="big" onclick="toggleIdVisibility('pron93')">洞</div></td>
+<div id="pron93" class="small">dòng</div><div class="big" onclick="toggleIdVisibility('pron93')">洞<table class="tooltiptext"><tr><td><span class='word'>洞穴</span><span class='word'>窑洞</span></td></tr></table></div></td>
 <td>
 <div id="pron94" class="small">tā</div><div class="big" onclick="toggleIdVisibility('pron94')">她</div></td>
 <td>
@@ -287,7 +331,7 @@ function toggleDisplay(element, className) {
 </tr>
 <tr>
 <td>
-<div id="pron97" class="small">ròu</div><div class="big" onclick="toggleIdVisibility('pron97')">肉</div></td>
+<div id="pron97" class="small">ròu</div><div class="big" onclick="toggleIdVisibility('pron97')">肉<table class="tooltiptext"><tr><td><span class='word'>补疮剜肉</span></td></tr></table></div></td>
 <td>
 <div id="pron98" class="small">diāo</div><div class="big" onclick="toggleIdVisibility('pron98')">叼</div></td>
 <td>
@@ -295,51 +339,51 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron100" class="small">páng</div><div class="big" onclick="toggleIdVisibility('pron100')">旁</div></td>
 <td>
-<div id="pron101" class="small">lè</div><div class="big" onclick="toggleIdVisibility('pron101')">乐</div></td>
+<div id="pron101" class="small">lè</div><div class="big" onclick="toggleIdVisibility('pron101')">乐<table class="tooltiptext"><tr><td><span class='word'>乐不思蜀</span><span class='word'>乐滋滋</span><span class='word'>乐谱</span><span class='word'>娱乐</span></td></tr></table></div></td>
 <td>
 <div id="pron102" class="small">dù</div><div class="big" onclick="toggleIdVisibility('pron102')">肚</div></td>
 <td>
 <div id="pron103" class="small">chán</div><div class="big" onclick="toggleIdVisibility('pron103')">馋</div></td>
 <td>
-<div id="pron104" class="small">liú</div><div class="big" onclick="toggleIdVisibility('pron104')">流</div></td>
+<div id="pron104" class="small">liú</div><div class="big" onclick="toggleIdVisibility('pron104')">流<table class="tooltiptext"><tr><td><span class='word'>流逝</span><span class='word'>风流倜傥</span><span class='word'>流汗浃背</span><span class='word'>流言蜚语</span><span class='word'>流萤</span><span class='word'>流觞</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron105" class="small">qīn</div><div class="big" onclick="toggleIdVisibility('pron105')">亲</div></td>
+<div id="pron105" class="small">qīn</div><div class="big" onclick="toggleIdVisibility('pron105')">亲<table class="tooltiptext"><tr><td><span class='word'>亲戚</span><span class='word'>葭莩之亲</span></td></tr></table></div></td>
 <td>
-<div id="pron106" class="small">yǔ</div><div class="big" onclick="toggleIdVisibility('pron106')">羽</div></td>
+<div id="pron106" class="small">yǔ</div><div class="big" onclick="toggleIdVisibility('pron106')">羽<table class="tooltiptext"><tr><td><span class='word'>铩羽而归</span></td></tr></table></div></td>
 <td>
-<div id="pron107" class="small">què</div><div class="big" onclick="toggleIdVisibility('pron107')">雀</div></td>
+<div id="pron107" class="small">què</div><div class="big" onclick="toggleIdVisibility('pron107')">雀<table class="tooltiptext"><tr><td><span class='word'>朱雀玄武</span></td></tr></table></div></td>
 <td>
-<div id="pron108" class="small">chà</div><div class="big" onclick="toggleIdVisibility('pron108')">差</div></td>
+<div id="pron108" class="small">chà</div><div class="big" onclick="toggleIdVisibility('pron108')">差<table class="tooltiptext"><tr><td><span class='word'>解差</span><span class='word'>不差累黍</span></td></tr></table></div></td>
 <td>
 <div id="pron109" class="small">sǎng</div><div class="big" onclick="toggleIdVisibility('pron109')">嗓</div></td>
 <td>
 <div id="pron110" class="small">shéi</div><div class="big" onclick="toggleIdVisibility('pron110')">谁</div></td>
 <td>
-<div id="pron111" class="small">chàng</div><div class="big" onclick="toggleIdVisibility('pron111')">唱</div></td>
+<div id="pron111" class="small">chàng</div><div class="big" onclick="toggleIdVisibility('pron111')">唱<table class="tooltiptext"><tr><td><span class='word'>低唱浅斟</span><span class='word'>唱筹量沙</span></td></tr></table></div></td>
 <td>
-<div id="pron112" class="small">gē</div><div class="big" onclick="toggleIdVisibility('pron112')">歌</div></td>
+<div id="pron112" class="small">gē</div><div class="big" onclick="toggleIdVisibility('pron112')">歌<table class="tooltiptext"><tr><td><span class='word'>引吭高歌</span><span class='word'>歌颂</span><span class='word'>歌舞伎</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
 <div id="pron113" class="small">jù</div><div class="big" onclick="toggleIdVisibility('pron113')">句</div></td>
 <td>
-<div id="pron114" class="small">yì</div><div class="big" onclick="toggleIdVisibility('pron114')">意</div></td>
+<div id="pron114" class="small">yì</div><div class="big" onclick="toggleIdVisibility('pron114')">意<table class="tooltiptext"><tr><td><span class='word'>肆意妄为</span><span class='word'>恣意妄为</span><span class='word'>意义</span><span class='word'>惬意</span><span class='word'>心猿意马</span></td></tr></table></div></td>
 <td>
 <div id="pron115" class="small">jí</div><div class="big" onclick="toggleIdVisibility('pron115')">极</div></td>
 <td>
 <div id="pron116" class="small">wa</div><div class="big" onclick="toggleIdVisibility('pron116')">哇</div></td>
 <td>
-<div id="pron117" class="small">zhāng</div><div class="big" onclick="toggleIdVisibility('pron117')">张</div></td>
+<div id="pron117" class="small">zhāng</div><div class="big" onclick="toggleIdVisibility('pron117')">张<table class="tooltiptext"><tr><td><span class='word'>剑拔弩张</span><span class='word'>嚣张</span><span class='word'>铺张扬厉</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
 <div id="pron118" class="small">lì</div><div class="big" onclick="toggleIdVisibility('pron118')">粒</div></td>
 <td>
-<div id="pron119" class="small">zhǒng</div><div class="big" onclick="toggleIdVisibility('pron119')">种</div></td>
+<div id="pron119" class="small">zhǒng</div><div class="big" onclick="toggleIdVisibility('pron119')">种<table class="tooltiptext"><tr><td><span class='word'>耕种</span></td></tr></table></div></td>
 <td>
-<div id="pron120" class="small">ní</div><div class="big" onclick="toggleIdVisibility('pron120')">泥</div></td>
+<div id="pron120" class="small">ní</div><div class="big" onclick="toggleIdVisibility('pron120')">泥<table class="tooltiptext"><tr><td><span class='word'>泥鳅</span><span class='word'>泥泞</span></td></tr></table></div></td>
 <td>
 <div id="pron121" class="small">xǐng</div><div class="big" onclick="toggleIdVisibility('pron121')">醒</div></td>
 <td>
@@ -349,25 +393,25 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron124" class="small">tǐng</div><div class="big" onclick="toggleIdVisibility('pron124')">挺</div></td>
 <td>
-<div id="pron125" class="small">shū</div><div class="big" onclick="toggleIdVisibility('pron125')">舒</div></td>
+<div id="pron125" class="small">shū</div><div class="big" onclick="toggleIdVisibility('pron125')">舒<table class="tooltiptext"><tr><td><span class='word'>舒适</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron126" class="small">qīng</div><div class="big" onclick="toggleIdVisibility('pron126')">轻</div></td>
+<div id="pron126" class="small">qīng</div><div class="big" onclick="toggleIdVisibility('pron126')">轻<table class="tooltiptext"><tr><td><span class='word'>轻盈</span><span class='word'>轻蔑</span></td></tr></table></div></td>
 <td>
 <div id="pron127" class="small">qiū</div><div class="big" onclick="toggleIdVisibility('pron127')">蚯</div></td>
 <td>
 <div id="pron128" class="small">yǐn</div><div class="big" onclick="toggleIdVisibility('pron128')">蚓</div></td>
 <td>
-<div id="pron129" class="small">xiàn</div><div class="big" onclick="toggleIdVisibility('pron129')">现</div></td>
+<div id="pron129" class="small">xiàn</div><div class="big" onclick="toggleIdVisibility('pron129')">现<table class="tooltiptext"><tr><td><span class='word'>昙花一现</span></td></tr></table></div></td>
 <td>
 <div id="pron130" class="small">wài</div><div class="big" onclick="toggleIdVisibility('pron130')">外</div></td>
 <td>
-<div id="pron131" class="small">yīn</div><div class="big" onclick="toggleIdVisibility('pron131')">音</div></td>
+<div id="pron131" class="small">yīn</div><div class="big" onclick="toggleIdVisibility('pron131')">音<table class="tooltiptext"><tr><td><span class='word'>靡靡之音</span><span class='word'>噪音</span><span class='word'>音韵</span></td></tr></table></div></td>
 <td>
-<div id="pron132" class="small">gào</div><div class="big" onclick="toggleIdVisibility('pron132')">告</div></td>
+<div id="pron132" class="small">gào</div><div class="big" onclick="toggleIdVisibility('pron132')">告<table class="tooltiptext"><tr><td><span class='word'>讣告</span><span class='word'>告辞</span><span class='word'>宣告</span><span class='word'>告诫</span></td></tr></table></div></td>
 <td>
-<div id="pron133" class="small">sù</div><div class="big" onclick="toggleIdVisibility('pron133')">诉</div></td>
+<div id="pron133" class="small">sù</div><div class="big" onclick="toggleIdVisibility('pron133')">诉<table class="tooltiptext"><tr><td><span class='word'>哭诉</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
@@ -375,15 +419,15 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron135" class="small">dá</div><div class="big" onclick="toggleIdVisibility('pron135')">答</div></td>
 <td>
-<div id="pron136" class="small">ràng</div><div class="big" onclick="toggleIdVisibility('pron136')">让</div></td>
+<div id="pron136" class="small">ràng</div><div class="big" onclick="toggleIdVisibility('pron136')">让<table class="tooltiptext"><tr><td><span class='word'>谦让</span></td></tr></table></div></td>
 <td>
-<div id="pron137" class="small">rè</div><div class="big" onclick="toggleIdVisibility('pron137')">热</div></td>
+<div id="pron137" class="small">rè</div><div class="big" onclick="toggleIdVisibility('pron137')">热<table class="tooltiptext"><tr><td><span class='word'>热腾腾</span><span class='word'>炽热</span><span class='word'>燥热</span><span class='word'>炙热</span></td></tr></table></div></td>
 <td>
-<div id="pron138" class="small">nào</div><div class="big" onclick="toggleIdVisibility('pron138')">闹</div></td>
+<div id="pron138" class="small">nào</div><div class="big" onclick="toggleIdVisibility('pron138')">闹<table class="tooltiptext"><tr><td><span class='word'>喧闹</span></td></tr></table></div></td>
 <td>
-<div id="pron139" class="small">xǐ</div><div class="big" onclick="toggleIdVisibility('pron139')">喜</div></td>
+<div id="pron139" class="small">xǐ</div><div class="big" onclick="toggleIdVisibility('pron139')">喜<table class="tooltiptext"><tr><td><span class='word'>恭喜</span></td></tr></table></div></td>
 <td>
-<div id="pron140" class="small">huān</div><div class="big" onclick="toggleIdVisibility('pron140')">欢</div></td>
+<div id="pron140" class="small">huān</div><div class="big" onclick="toggleIdVisibility('pron140')">欢<table class="tooltiptext"><tr><td><span class='word'>悒悒不欢</span></td></tr></table></div></td>
 <td>
 <div id="pron141" class="small">gǎn</div><div class="big" onclick="toggleIdVisibility('pron141')">赶</div></td>
 </tr>
@@ -391,69 +435,69 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron142" class="small">tū</div><div class="big" onclick="toggleIdVisibility('pron142')">突</div></td>
 <td>
-<div id="pron143" class="small">rán</div><div class="big" onclick="toggleIdVisibility('pron143')">然</div></td>
+<div id="pron143" class="small">rán</div><div class="big" onclick="toggleIdVisibility('pron143')">然<table class="tooltiptext"><tr><td><span class='word'>猛然</span><span class='word'>黯然失色</span><span class='word'>大义凛然</span><span class='word'>戛然而止</span><span class='word'>轩然大波</span><span class='word'>嫣然一笑</span><span class='word'>溘然长逝</span><span class='word'>竟然</span><span class='word'>虽然</span><span class='word'>怅然若失</span><span class='word'>蓦然回首</span><span class='word'>毅然</span><span class='word'>黯然</span><span class='word'>幡然悔悟</span></td></tr></table></div></td>
 <td>
-<div id="pron144" class="small">guāng</div><div class="big" onclick="toggleIdVisibility('pron144')">光</div></td>
+<div id="pron144" class="small">guāng</div><div class="big" onclick="toggleIdVisibility('pron144')">光<table class="tooltiptext"><tr><td><span class='word'>光辉</span><span class='word'>霞光</span><span class='word'>韬光养晦</span><span class='word'>刮垢磨光</span><span class='word'>光秃秃</span></td></tr></table></div></td>
 <td>
-<div id="pron145" class="small">míng</div><div class="big" onclick="toggleIdVisibility('pron145')">明</div></td>
+<div id="pron145" class="small">míng</div><div class="big" onclick="toggleIdVisibility('pron145')">明<table class="tooltiptext"><tr><td><span class='word'>明察秋毫</span><span class='word'>证明</span><span class='word'>明媚</span><span class='word'>聪明睿智</span><span class='word'>黜陟幽明</span></td></tr></table></div></td>
 <td>
-<div id="pron146" class="small">shì</div><div class="big" onclick="toggleIdVisibility('pron146')">世</div></td>
+<div id="pron146" class="small">shì</div><div class="big" onclick="toggleIdVisibility('pron146')">世<table class="tooltiptext"><tr><td><span class='word'>逝世</span></td></tr></table></div></td>
 <td>
 <div id="pron147" class="small">jiè</div><div class="big" onclick="toggleIdVisibility('pron147')">界</div></td>
 <td>
 <div id="pron148" class="small">mí</div><div class="big" onclick="toggleIdVisibility('pron148')">谜</div></td>
 <td>
-<div id="pron149" class="small">yǔ</div><div class="big" onclick="toggleIdVisibility('pron149')">语</div></td>
+<div id="pron149" class="small">yǔ</div><div class="big" onclick="toggleIdVisibility('pron149')">语<table class="tooltiptext"><tr><td><span class='word'>流言蜚语</span><span class='word'>俗语</span><span class='word'>谶语</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron150" class="small">pí</div><div class="big" onclick="toggleIdVisibility('pron150')">皮</div></td>
+<div id="pron150" class="small">pí</div><div class="big" onclick="toggleIdVisibility('pron150')">皮<table class="tooltiptext"><tr><td><span class='word'>顽皮</span><span class='word'>鸡毛蒜皮</span><span class='word'>臭皮囊</span></td></tr></table></div></td>
 <td>
 <div id="pron151" class="small">qiú</div><div class="big" onclick="toggleIdVisibility('pron151')">球</div></td>
 <td>
-<div id="pron152" class="small">bǎo</div><div class="big" onclick="toggleIdVisibility('pron152')">宝</div></td>
+<div id="pron152" class="small">bǎo</div><div class="big" onclick="toggleIdVisibility('pron152')">宝<table class="tooltiptext"><tr><td><span class='word'>瑰宝</span></td></tr></table></div></td>
 <td>
 <div id="pron153" class="small">pāi</div><div class="big" onclick="toggleIdVisibility('pron153')">拍</div></td>
 <td>
-<div id="pron154" class="small">zhòng</div><div class="big" onclick="toggleIdVisibility('pron154')">重</div></td>
+<div id="pron154" class="small">zhòng</div><div class="big" onclick="toggleIdVisibility('pron154')">重<table class="tooltiptext"><tr><td><span class='word'>笨重</span><span class='word'>重叠</span><span class='word'>慎重</span></td></tr></table></div></td>
 <td>
 <div id="pron155" class="small">qiān</div><div class="big" onclick="toggleIdVisibility('pron155')">铅</div></td>
 <td>
-<div id="pron156" class="small">bǐ</div><div class="big" onclick="toggleIdVisibility('pron156')">笔</div></td>
+<div id="pron156" class="small">bǐ</div><div class="big" onclick="toggleIdVisibility('pron156')">笔<table class="tooltiptext"><tr><td><span class='word'>笔削褒贬</span><span class='word'>如椽之笔</span><span class='word'>笔诛墨伐</span><span class='word'>秉笔直书</span><span class='word'>笔饱墨酣</span></td></tr></table></div></td>
 <td>
-<div id="pron157" class="small">cháng</div><div class="big" onclick="toggleIdVisibility('pron157')">肠</div></td>
+<div id="pron157" class="small">cháng</div><div class="big" onclick="toggleIdVisibility('pron157')">肠<table class="tooltiptext"><tr><td><span class='word'>心肠</span><span class='word'>蛇蝎心肠</span><span class='word'>饥肠辘辘</span><span class='word'>蝉腹龟肠</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron158" class="small">tú</div><div class="big" onclick="toggleIdVisibility('pron158')">图</div></td>
+<div id="pron158" class="small">tú</div><div class="big" onclick="toggleIdVisibility('pron158')">图<table class="tooltiptext"><tr><td><span class='word'>励精图治</span><span class='word'>图案</span><span class='word'>按图索骥</span></td></tr></table></div></td>
 <td>
-<div id="pron159" class="small">xiě</div><div class="big" onclick="toggleIdVisibility('pron159')">写</div></td>
+<div id="pron159" class="small">xiě</div><div class="big" onclick="toggleIdVisibility('pron159')">写<table class="tooltiptext"><tr><td><span class='word'>描写</span><span class='word'>抄写</span><span class='word'>誊写</span></td></tr></table></div></td>
 <td>
 <div id="pron160" class="small">zì</div><div class="big" onclick="toggleIdVisibility('pron160')">字</div></td>
 <td>
-<div id="pron161" class="small">ǎi</div><div class="big" onclick="toggleIdVisibility('pron161')">矮</div></td>
+<div id="pron161" class="small">ǎi</div><div class="big" onclick="toggleIdVisibility('pron161')">矮<table class="tooltiptext"><tr><td><span class='word'>矮小</span></td></tr></table></div></td>
 <td>
 <div id="pron162" class="small">pà</div><div class="big" onclick="toggleIdVisibility('pron162')">怕</div></td>
 <td>
-<div id="pron163" class="small">lěng</div><div class="big" onclick="toggleIdVisibility('pron163')">冷</div></td>
+<div id="pron163" class="small">lěng</div><div class="big" onclick="toggleIdVisibility('pron163')">冷<table class="tooltiptext"><tr><td><span class='word'>冷飕飕</span><span class='word'>冷酷</span></td></tr></table></div></td>
 <td>
-<div id="pron164" class="small">hàn</div><div class="big" onclick="toggleIdVisibility('pron164')">汗</div></td>
+<div id="pron164" class="small">hàn</div><div class="big" onclick="toggleIdVisibility('pron164')">汗<table class="tooltiptext"><tr><td><span class='word'>流汗浃背</span></td></tr></table></div></td>
 <td>
 <div id="pron165" class="small">tǎng</div><div class="big" onclick="toggleIdVisibility('pron165')">淌</div></td>
 </tr>
 <tr>
 <td>
-<div id="pron166" class="small">měi</div><div class="big" onclick="toggleIdVisibility('pron166')">美</div></td>
+<div id="pron166" class="small">měi</div><div class="big" onclick="toggleIdVisibility('pron166')">美<table class="tooltiptext"><tr><td><span class='word'>溢美之词</span><span class='word'>媲美</span></td></tr></table></div></td>
 <td>
-<div id="pron167" class="small">lì</div><div class="big" onclick="toggleIdVisibility('pron167')">丽</div></td>
+<div id="pron167" class="small">lì</div><div class="big" onclick="toggleIdVisibility('pron167')">丽<table class="tooltiptext"><tr><td><span class='word'>俏丽</span><span class='word'>瑰丽</span><span class='word'>跌宕遒丽</span></td></tr></table></div></td>
 <td>
-<div id="pron168" class="small">wèi</div><div class="big" onclick="toggleIdVisibility('pron168')">为</div></td>
+<div id="pron168" class="small">wèi</div><div class="big" onclick="toggleIdVisibility('pron168')">为<table class="tooltiptext"><tr><td><span class='word'>助纣为虐</span><span class='word'>肆意妄为</span><span class='word'>恣意妄为</span><span class='word'>歃血为盟</span></td></tr></table></div></td>
 <td>
 <div id="pron169" class="small">zhěng</div><div class="big" onclick="toggleIdVisibility('pron169')">整</div></td>
 <td>
-<div id="pron170" class="small">yáng</div><div class="big" onclick="toggleIdVisibility('pron170')">洋</div></td>
+<div id="pron170" class="small">yáng</div><div class="big" onclick="toggleIdVisibility('pron170')">洋<table class="tooltiptext"><tr><td><span class='word'>洋溢</span></td></tr></table></div></td>
 <td>
-<div id="pron171" class="small">guān</div><div class="big" onclick="toggleIdVisibility('pron171')">冠</div></td>
+<div id="pron171" class="small">guān</div><div class="big" onclick="toggleIdVisibility('pron171')">冠<table class="tooltiptext"><tr><td><span class='word'>冠冕堂皇</span><span class='word'>峨冠博带</span><span class='word'>堂皇冠冕</span><span class='word'>冠军</span></td></tr></table></div></td>
 <td>
 <div id="pron172" class="small">yóu</div><div class="big" onclick="toggleIdVisibility('pron172')">油</div></td>
 <td>
@@ -461,27 +505,27 @@ function toggleDisplay(element, className) {
 </tr>
 <tr>
 <td>
-<div id="pron174" class="small">jīn</div><div class="big" onclick="toggleIdVisibility('pron174')">金</div></td>
+<div id="pron174" class="small">jīn</div><div class="big" onclick="toggleIdVisibility('pron174')">金<table class="tooltiptext"><tr><td><span class='word'>金匮要略</span><span class='word'>金蝉脱壳</span><span class='word'>金銮殿</span></td></tr></table></div></td>
 <td>
 <div id="pron175" class="small">dì</div><div class="big" onclick="toggleIdVisibility('pron175')">第</div></td>
 <td>
-<div id="pron176" class="small">bǎo</div><div class="big" onclick="toggleIdVisibility('pron176')">饱</div></td>
+<div id="pron176" class="small">bǎo</div><div class="big" onclick="toggleIdVisibility('pron176')">饱<table class="tooltiptext"><tr><td><span class='word'>笔饱墨酣</span></td></tr></table></div></td>
 <td>
 <div id="pron177" class="small">zhuó</div><div class="big" onclick="toggleIdVisibility('pron177')">啄</div></td>
 <td>
-<div id="pron178" class="small">bìng</div><div class="big" onclick="toggleIdVisibility('pron178')">病</div></td>
+<div id="pron178" class="small">bìng</div><div class="big" onclick="toggleIdVisibility('pron178')">病<table class="tooltiptext"><tr><td><span class='word'>病入膏肓</span><span class='word'>病染膏肓</span><span class='word'>病笃</span></td></tr></table></div></td>
 <td>
-<div id="pron179" class="small">zhì</div><div class="big" onclick="toggleIdVisibility('pron179')">治</div></td>
+<div id="pron179" class="small">zhì</div><div class="big" onclick="toggleIdVisibility('pron179')">治<table class="tooltiptext"><tr><td><span class='word'>励精图治</span><span class='word'>治丝益棼</span></td></tr></table></div></td>
 <td>
-<div id="pron180" class="small">yī</div><div class="big" onclick="toggleIdVisibility('pron180')">医</div></td>
+<div id="pron180" class="small">yī</div><div class="big" onclick="toggleIdVisibility('pron180')">医<table class="tooltiptext"><tr><td><span class='word'>讳疾忌医</span></td></tr></table></div></td>
 <td>
-<div id="pron181" class="small">yáo</div><div class="big" onclick="toggleIdVisibility('pron181')">摇</div></td>
+<div id="pron181" class="small">yáo</div><div class="big" onclick="toggleIdVisibility('pron181')">摇<table class="tooltiptext"><tr><td><span class='word'>摇篮</span><span class='word'>摇曳</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
 <div id="pron182" class="small">bǎi</div><div class="big" onclick="toggleIdVisibility('pron182')">摆</div></td>
 <td>
-<div id="pron183" class="small">yuán</div><div class="big" onclick="toggleIdVisibility('pron183')">园</div></td>
+<div id="pron183" class="small">yuán</div><div class="big" onclick="toggleIdVisibility('pron183')">园<table class="tooltiptext"><tr><td><span class='word'>校园</span><span class='word'>陵园</span></td></tr></table></div></td>
 <td>
 <div id="pron184" class="small">mì</div><div class="big" onclick="toggleIdVisibility('pron184')">蜜</div></td>
 <td>
@@ -489,25 +533,25 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron186" class="small">gǔ</div><div class="big" onclick="toggleIdVisibility('pron186')">鼓</div></td>
 <td>
-<div id="pron187" class="small">cǎi</div><div class="big" onclick="toggleIdVisibility('pron187')">采</div></td>
+<div id="pron187" class="small">cǎi</div><div class="big" onclick="toggleIdVisibility('pron187')">采<table class="tooltiptext"><tr><td><span class='word'>采撷</span></td></tr></table></div></td>
 <td>
 <div id="pron188" class="small">dào</div><div class="big" onclick="toggleIdVisibility('pron188')">稻</div></td>
 <td>
-<div id="pron189" class="small">hài</div><div class="big" onclick="toggleIdVisibility('pron189')">害</div></td>
+<div id="pron189" class="small">hài</div><div class="big" onclick="toggleIdVisibility('pron189')">害<table class="tooltiptext"><tr><td><span class='word'>贻害无穷</span><span class='word'>危害</span><span class='word'>厉害</span><span class='word'>陷害</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron190" class="small">shāng</div><div class="big" onclick="toggleIdVisibility('pron190')">伤</div></td>
+<div id="pron190" class="small">shāng</div><div class="big" onclick="toggleIdVisibility('pron190')">伤<table class="tooltiptext"><tr><td><span class='word'>遍体鳞伤</span><span class='word'>悲伤</span></td></tr></table></div></td>
 <td>
-<div id="pron191" class="small">lǐ</div><div class="big" onclick="toggleIdVisibility('pron191')">理</div></td>
+<div id="pron191" class="small">lǐ</div><div class="big" onclick="toggleIdVisibility('pron191')">理<table class="tooltiptext"><tr><td><span class='word'>哲理</span><span class='word'>理睬</span></td></tr></table></div></td>
 <td>
-<div id="pron192" class="small">yīn</div><div class="big" onclick="toggleIdVisibility('pron192')">因</div></td>
+<div id="pron192" class="small">yīn</div><div class="big" onclick="toggleIdVisibility('pron192')">因<table class="tooltiptext"><tr><td><span class='word'>因地制宜</span></td></tr></table></div></td>
 <td>
-<div id="pron193" class="small">biǎo</div><div class="big" onclick="toggleIdVisibility('pron193')">表</div></td>
+<div id="pron193" class="small">biǎo</div><div class="big" onclick="toggleIdVisibility('pron193')">表<table class="tooltiptext"><tr><td><span class='word'>表链</span><span class='word'>表蒙子</span></td></tr></table></div></td>
 <td>
-<div id="pron194" class="small">cán</div><div class="big" onclick="toggleIdVisibility('pron194')">惭</div></td>
+<div id="pron194" class="small">cán</div><div class="big" onclick="toggleIdVisibility('pron194')">惭<table class="tooltiptext"><tr><td><span class='word'>惭愧</span></td></tr></table></div></td>
 <td>
-<div id="pron195" class="small">kuì</div><div class="big" onclick="toggleIdVisibility('pron195')">愧</div></td>
+<div id="pron195" class="small">kuì</div><div class="big" onclick="toggleIdVisibility('pron195')">愧<table class="tooltiptext"><tr><td><span class='word'>愧疚</span><span class='word'>惭愧</span><span class='word'>羞愧</span></td></tr></table></div></td>
 <td>
 <div id="pron196" class="small">cǐ</div><div class="big" onclick="toggleIdVisibility('pron196')">此</div></td>
 <td>
@@ -517,15 +561,15 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron198" class="small">ō</div><div class="big" onclick="toggleIdVisibility('pron198')">喔</div></td>
 <td>
-<div id="pron199" class="small">biàn</div><div class="big" onclick="toggleIdVisibility('pron199')">遍</div></td>
+<div id="pron199" class="small">biàn</div><div class="big" onclick="toggleIdVisibility('pron199')">遍<table class="tooltiptext"><tr><td><span class='word'>遍体鳞伤</span><span class='word'>普遍</span></td></tr></table></div></td>
 <td>
 <div id="pron200" class="small">cuī</div><div class="big" onclick="toggleIdVisibility('pron200')">催</div></td>
 <td>
-<div id="pron201" class="small">mái</div><div class="big" onclick="toggleIdVisibility('pron201')">埋</div></td>
+<div id="pron201" class="small">mái</div><div class="big" onclick="toggleIdVisibility('pron201')">埋<table class="tooltiptext"><tr><td><span class='word'>埋怨</span><span class='word'>埋葬</span><span class='word'>瘗玉埋香</span></td></tr></table></div></td>
 <td>
-<div id="pron202" class="small">shé</div><div class="big" onclick="toggleIdVisibility('pron202')">蛇</div></td>
+<div id="pron202" class="small">shé</div><div class="big" onclick="toggleIdVisibility('pron202')">蛇<table class="tooltiptext"><tr><td><span class='word'>画蛇添足</span><span class='word'>蛇蝎心肠</span></td></tr></table></div></td>
 <td>
-<div id="pron203" class="small">sūn</div><div class="big" onclick="toggleIdVisibility('pron203')">孙</div></td>
+<div id="pron203" class="small">sūn</div><div class="big" onclick="toggleIdVisibility('pron203')">孙<table class="tooltiptext"><tr><td><span class='word'>名落孙山</span><span class='word'>孙思邈</span></td></tr></table></div></td>
 <td>
 <div id="pron204" class="small">áo</div><div class="big" onclick="toggleIdVisibility('pron204')">敖</div></td>
 <td>
@@ -533,51 +577,51 @@ function toggleDisplay(element, className) {
 </tr>
 <tr>
 <td>
-<div id="pron206" class="small">jiǔ</div><div class="big" onclick="toggleIdVisibility('pron206')">久</div></td>
+<div id="pron206" class="small">jiǔ</div><div class="big" onclick="toggleIdVisibility('pron206')">久<table class="tooltiptext"><tr><td><span class='word'>"本义是指太阳的影子。相持既久</span></td></tr></table></div></td>
 <td>
-<div id="pron207" class="small">sǐ</div><div class="big" onclick="toggleIdVisibility('pron207')">死</div></td>
+<div id="pron207" class="small">sǐ</div><div class="big" onclick="toggleIdVisibility('pron207')">死<table class="tooltiptext"><tr><td><span class='word'>朝生暮死</span></td></tr></table></div></td>
 <td>
-<div id="pron208" class="small">dǎ</div><div class="big" onclick="toggleIdVisibility('pron208')">打</div></td>
+<div id="pron208" class="small">dǎ</div><div class="big" onclick="toggleIdVisibility('pron208')">打<table class="tooltiptext"><tr><td><span class='word'>打扮</span><span class='word'>打烊</span><span class='word'>打扰</span><span class='word'>打仗</span><span class='word'>打搅</span><span class='word'>撮科打哄</span><span class='word'>插科打诨</span></td></tr></table></div></td>
 <td>
 <div id="pron209" class="small">wā</div><div class="big" onclick="toggleIdVisibility('pron209')">挖</div></td>
 <td>
-<div id="pron210" class="small">cā</div><div class="big" onclick="toggleIdVisibility('pron210')">擦</div></td>
+<div id="pron210" class="small">cā</div><div class="big" onclick="toggleIdVisibility('pron210')">擦<table class="tooltiptext"><tr><td><span class='word'>擦掌磨拳</span><span class='word'>擦拳磨掌</span></td></tr></table></div></td>
 <td>
 <div id="pron211" class="small">lèi</div><div class="big" onclick="toggleIdVisibility('pron211')">泪</div></td>
 <td>
-<div id="pron212" class="small">bié</div><div class="big" onclick="toggleIdVisibility('pron212')">别</div></td>
+<div id="pron212" class="small">bié</div><div class="big" onclick="toggleIdVisibility('pron212')">别<table class="tooltiptext"><tr><td><span class='word'>别致</span><span class='word'>鉴别</span><span class='word'>别墅</span><span class='word'>别无二致</span></td></tr></table></div></td>
 <td>
 <div id="pron213" class="small">jīn</div><div class="big" onclick="toggleIdVisibility('pron213')">今</div></td>
 </tr>
 <tr>
 <td>
-<div id="pron214" class="small">suǒ</div><div class="big" onclick="toggleIdVisibility('pron214')">所</div></td>
+<div id="pron214" class="small">suǒ</div><div class="big" onclick="toggleIdVisibility('pron214')">所<table class="tooltiptext"><tr><td><span class='word'>匪夷所思</span><span class='word'>所谓</span><span class='word'>所向披靡</span></td></tr></table></div></td>
 <td>
-<div id="pron215" class="small">nán</div><div class="big" onclick="toggleIdVisibility('pron215')">难</div></td>
+<div id="pron215" class="small">nán</div><div class="big" onclick="toggleIdVisibility('pron215')">难<table class="tooltiptext"><tr><td><span class='word'>驷马难追</span><span class='word'>劫难</span><span class='word'>刁难</span><span class='word'>殉难</span></td></tr></table></div></td>
 <td>
 <div id="pron216" class="small">luò</div><div class="big" onclick="toggleIdVisibility('pron216')">骆</div></td>
 <td>
 <div id="pron217" class="small">tuó</div><div class="big" onclick="toggleIdVisibility('pron217')">驼</div></td>
 <td>
-<div id="pron218" class="small">xià</div><div class="big" onclick="toggleIdVisibility('pron218')">夏</div></td>
+<div id="pron218" class="small">xià</div><div class="big" onclick="toggleIdVisibility('pron218')">夏<table class="tooltiptext"><tr><td><span class='word'>夏鲧</span></td></tr></table></div></td>
 <td>
-<div id="pron219" class="small">sàn</div><div class="big" onclick="toggleIdVisibility('pron219')">散</div></td>
+<div id="pron219" class="small">sàn</div><div class="big" onclick="toggleIdVisibility('pron219')">散<table class="tooltiptext"><tr><td><span class='word'>冰消雾散</span></td></tr></table></div></td>
 <td>
-<div id="pron220" class="small">cuò</div><div class="big" onclick="toggleIdVisibility('pron220')">错</div></td>
+<div id="pron220" class="small">cuò</div><div class="big" onclick="toggleIdVisibility('pron220')">错<table class="tooltiptext"><tr><td><span class='word'>杯觥交错</span><span class='word'>错误</span><span class='word'>错杂</span></td></tr></table></div></td>
 <td>
-<div id="pron221" class="small">qíng</div><div class="big" onclick="toggleIdVisibility('pron221')">情</div></td>
+<div id="pron221" class="small">qíng</div><div class="big" onclick="toggleIdVisibility('pron221')">情<table class="tooltiptext"><tr><td><span class='word'>煽情</span><span class='word'>舐犊情深</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron222" class="small">zhèng</div><div class="big" onclick="toggleIdVisibility('pron222')">证</div></td>
+<div id="pron222" class="small">zhèng</div><div class="big" onclick="toggleIdVisibility('pron222')">证<table class="tooltiptext"><tr><td><span class='word'>证明</span></td></tr></table></div></td>
 <td>
-<div id="pron223" class="small">liǎ</div><div class="big" onclick="toggleIdVisibility('pron223')">俩</div></td>
+<div id="pron223" class="small">liǎ</div><div class="big" onclick="toggleIdVisibility('pron223')">俩<table class="tooltiptext"><tr><td><span class='word'>鬼魅伎俩</span></td></tr></table></div></td>
 <td>
-<div id="pron224" class="small">wéi</div><div class="big" onclick="toggleIdVisibility('pron224')">围</div></td>
+<div id="pron224" class="small">wéi</div><div class="big" onclick="toggleIdVisibility('pron224')">围<table class="tooltiptext"><tr><td><span class='word'>围绕</span></td></tr></table></div></td>
 <td>
 <div id="pron225" class="small">qiáng</div><div class="big" onclick="toggleIdVisibility('pron225')">墙</div></td>
 <td>
-<div id="pron226" class="small">xǔ</div><div class="big" onclick="toggleIdVisibility('pron226')">许</div></td>
+<div id="pron226" class="small">xǔ</div><div class="big" onclick="toggleIdVisibility('pron226')">许<table class="tooltiptext"><tr><td><span class='word'>允许</span></td></tr></table></div></td>
 <td>
 <div id="pron227" class="small">jǔ</div><div class="big" onclick="toggleIdVisibility('pron227')">举</div></td>
 <td>
@@ -587,15 +631,15 @@ function toggleDisplay(element, className) {
 </tr>
 <tr>
 <td>
-<div id="pron230" class="small">rèn</div><div class="big" onclick="toggleIdVisibility('pron230')">认</div></td>
+<div id="pron230" class="small">rèn</div><div class="big" onclick="toggleIdVisibility('pron230')">认<table class="tooltiptext"><tr><td><span class='word'>认识</span><span class='word'>承认</span></td></tr></table></div></td>
 <td>
 <div id="pron231" class="small">shū</div><div class="big" onclick="toggleIdVisibility('pron231')">输</div></td>
 <td>
-<div id="pron232" class="small">xiàng</div><div class="big" onclick="toggleIdVisibility('pron232')">向</div></td>
+<div id="pron232" class="small">xiàng</div><div class="big" onclick="toggleIdVisibility('pron232')">向<table class="tooltiptext"><tr><td><span class='word'>所向披靡</span><span class='word'>向导</span><span class='word'>勃谿相向</span></td></tr></table></div></td>
 <td>
-<div id="pron233" class="small">zhǎi</div><div class="big" onclick="toggleIdVisibility('pron233')">窄</div></td>
+<div id="pron233" class="small">zhǎi</div><div class="big" onclick="toggleIdVisibility('pron233')">窄<table class="tooltiptext"><tr><td><span class='word'>狭窄</span></td></tr></table></div></td>
 <td>
-<div id="pron234" class="small">mó</div><div class="big" onclick="toggleIdVisibility('pron234')">模</div></td>
+<div id="pron234" class="small">mó</div><div class="big" onclick="toggleIdVisibility('pron234')">模<table class="tooltiptext"><tr><td><span class='word'>模范</span><span class='word'>楷模</span><span class='word'>模糊</span></td></tr></table></div></td>
 <td>
 <div id="pron235" class="small">guì</div><div class="big" onclick="toggleIdVisibility('pron235')">跪</div></td>
 <td>
@@ -605,11 +649,11 @@ function toggleDisplay(element, className) {
 </tr>
 <tr>
 <td>
-<div id="pron238" class="small">duǎn</div><div class="big" onclick="toggleIdVisibility('pron238')">短</div></td>
+<div id="pron238" class="small">duǎn</div><div class="big" onclick="toggleIdVisibility('pron238')">短<table class="tooltiptext"><tr><td><span class='word'>长吁短叹</span></td></tr></table></div></td>
 <td>
-<div id="pron239" class="small">rú</div><div class="big" onclick="toggleIdVisibility('pron239')">如</div></td>
+<div id="pron239" class="small">rú</div><div class="big" onclick="toggleIdVisibility('pron239')">如<table class="tooltiptext"><tr><td><span class='word'>如愿以偿</span><span class='word'>忧心如焚</span><span class='word'>如坐针毡</span><span class='word'>例如</span><span class='word'>如椽之笔</span><span class='word'>宛如</span><span class='word'>安如磐石</span></td></tr></table></div></td>
 <td>
-<div id="pron240" class="small">jì</div><div class="big" onclick="toggleIdVisibility('pron240')">既</div></td>
+<div id="pron240" class="small">jì</div><div class="big" onclick="toggleIdVisibility('pron240')">既<table class="tooltiptext"><tr><td><span class='word'>"本义是指太阳的影子。相持既久</span></td></tr></table></div></td>
 <td>
 <div id="pron241" class="small">zhēng</div><div class="big" onclick="toggleIdVisibility('pron241')">争</div></td>
 <td>
@@ -619,19 +663,19 @@ function toggleDisplay(element, className) {
 </tr>
 <tr>
 <td>
-<div id="pron244" class="small">cōng</div><div class="big" onclick="toggleIdVisibility('pron244')">聪</div></td>
+<div id="pron244" class="small">cōng</div><div class="big" onclick="toggleIdVisibility('pron244')">聪<table class="tooltiptext"><tr><td><span class='word'>聪明睿智</span></td></tr></table></div></td>
 <td>
-<div id="pron245" class="small">táo</div><div class="big" onclick="toggleIdVisibility('pron245')">淘</div></td>
+<div id="pron245" class="small">táo</div><div class="big" onclick="toggleIdVisibility('pron245')">淘<table class="tooltiptext"><tr><td><span class='word'>淘汰</span></td></tr></table></div></td>
 <td>
-<div id="pron246" class="small">xǐ</div><div class="big" onclick="toggleIdVisibility('pron246')">洗</div></td>
+<div id="pron246" class="small">xǐ</div><div class="big" onclick="toggleIdVisibility('pron246')">洗<table class="tooltiptext"><tr><td><span class='word'>洗漱</span></td></tr></table></div></td>
 <td>
 <div id="pron247" class="small">zǎo</div><div class="big" onclick="toggleIdVisibility('pron247')">澡</div></td>
 <td>
-<div id="pron248" class="small">zhuāng</div><div class="big" onclick="toggleIdVisibility('pron248')">装</div></td>
+<div id="pron248" class="small">zhuāng</div><div class="big" onclick="toggleIdVisibility('pron248')">装<table class="tooltiptext"><tr><td><span class='word'>装饰</span><span class='word'>伪装</span><span class='word'>装置</span></td></tr></table></div></td>
 <td>
-<div id="pron249" class="small">zhào</div><div class="big" onclick="toggleIdVisibility('pron249')">照</div></td>
+<div id="pron249" class="small">zhào</div><div class="big" onclick="toggleIdVisibility('pron249')">照<table class="tooltiptext"><tr><td><span class='word'>遵照</span><span class='word'>照例</span></td></tr></table></div></td>
 <td>
-<div id="pron250" class="small">bì</div><div class="big" onclick="toggleIdVisibility('pron250')">闭</div></td>
+<div id="pron250" class="small">bì</div><div class="big" onclick="toggleIdVisibility('pron250')">闭<table class="tooltiptext"><tr><td><span class='word'>闭门羹</span><span class='word'>吃闭门羹</span></td></tr></table></div></td>
 <td>
 <div id="pron251" class="small">gē</div><div class="big" onclick="toggleIdVisibility('pron251')">咯</div></td>
 </tr>
@@ -651,29 +695,29 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron258" class="small">qiào</div><div class="big" onclick="toggleIdVisibility('pron258')">翘</div></td>
 <td>
-<div id="pron259" class="small">miào</div><div class="big" onclick="toggleIdVisibility('pron259')">妙</div></td>
+<div id="pron259" class="small">miào</div><div class="big" onclick="toggleIdVisibility('pron259')">妙<table class="tooltiptext"><tr><td><span class='word'>惟妙惟肖</span><span class='word'>奥妙</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
 <div id="pron260" class="small">hā</div><div class="big" onclick="toggleIdVisibility('pron260')">哈</div></td>
 <td>
-<div id="pron261" class="small">zhòu</div><div class="big" onclick="toggleIdVisibility('pron261')">皱</div></td>
+<div id="pron261" class="small">zhòu</div><div class="big" onclick="toggleIdVisibility('pron261')">皱<table class="tooltiptext"><tr><td><span class='word'>皱纹</span></td></tr></table></div></td>
 <td>
-<div id="pron262" class="small">méi</div><div class="big" onclick="toggleIdVisibility('pron262')">眉</div></td>
+<div id="pron262" class="small">méi</div><div class="big" onclick="toggleIdVisibility('pron262')">眉<table class="tooltiptext"><tr><td><span class='word'>百龄眉寿</span><span class='word'>巾帼须眉</span></td></tr></table></div></td>
 <td>
 <div id="pron263" class="small">sāo</div><div class="big" onclick="toggleIdVisibility('pron263')">臊</div></td>
 <td>
-<div id="pron264" class="small">gàn</div><div class="big" onclick="toggleIdVisibility('pron264')">干</div></td>
+<div id="pron264" class="small">gàn</div><div class="big" onclick="toggleIdVisibility('pron264')">干<table class="tooltiptext"><tr><td><span class='word'>干哕</span><span class='word'>干涸</span></td></tr></table></div></td>
 <td>
 <div id="pron265" class="small">jìng</div><div class="big" onclick="toggleIdVisibility('pron265')">净</div></td>
 <td>
 <div id="pron266" class="small">chuáng</div><div class="big" onclick="toggleIdVisibility('pron266')">床</div></td>
 <td>
-<div id="pron267" class="small">chuān</div><div class="big" onclick="toggleIdVisibility('pron267')">穿</div></td>
+<div id="pron267" class="small">chuān</div><div class="big" onclick="toggleIdVisibility('pron267')">穿<table class="tooltiptext"><tr><td><span class='word'>戳穿</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron268" class="small">fàn</div><div class="big" onclick="toggleIdVisibility('pron268')">饭</div></td>
+<div id="pron268" class="small">fàn</div><div class="big" onclick="toggleIdVisibility('pron268')">饭<table class="tooltiptext"><tr><td><span class='word'>残羹剩饭</span><span class='word'>酒囊饭袋</span></td></tr></table></div></td>
 <td>
 <div id="pron269" class="small">jiǎng</div><div class="big" onclick="toggleIdVisibility('pron269')">讲</div></td>
 <td>
@@ -683,43 +727,43 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron272" class="small">yǐ</div><div class="big" onclick="toggleIdVisibility('pron272')">椅</div></td>
 <td>
-<div id="pron273" class="small">chuāng</div><div class="big" onclick="toggleIdVisibility('pron273')">窗</div></td>
+<div id="pron273" class="small">chuāng</div><div class="big" onclick="toggleIdVisibility('pron273')">窗<table class="tooltiptext"><tr><td><span class='word'>橱窗</span></td></tr></table></div></td>
 <td>
-<div id="pron274" class="small">diàn</div><div class="big" onclick="toggleIdVisibility('pron274')">电</div></td>
+<div id="pron274" class="small">diàn</div><div class="big" onclick="toggleIdVisibility('pron274')">电<table class="tooltiptext"><tr><td><span class='word'>轰雷掣电</span><span class='word'>风飑电击</span></td></tr></table></div></td>
 <td>
 <div id="pron275" class="small">dēng</div><div class="big" onclick="toggleIdVisibility('pron275')">灯</div></td>
 </tr>
 <tr>
 <td>
-<div id="pron276" class="small">bīng</div><div class="big" onclick="toggleIdVisibility('pron276')">冰</div></td>
+<div id="pron276" class="small">bīng</div><div class="big" onclick="toggleIdVisibility('pron276')">冰<table class="tooltiptext"><tr><td><span class='word'>冰消雾散</span><span class='word'>冰雹</span></td></tr></table></div></td>
 <td>
 <div id="pron277" class="small">xiāng</div><div class="big" onclick="toggleIdVisibility('pron277')">箱</div></td>
 <td>
-<div id="pron278" class="small">shì</div><div class="big" onclick="toggleIdVisibility('pron278')">视</div></td>
+<div id="pron278" class="small">shì</div><div class="big" onclick="toggleIdVisibility('pron278')">视<table class="tooltiptext"><tr><td><span class='word'>虎视眈眈</span><span class='word'>凝视</span><span class='word'>藐视</span><span class='word'>窥视</span></td></tr></table></div></td>
 <td>
-<div id="pron279" class="small">jī</div><div class="big" onclick="toggleIdVisibility('pron279')">机</div></td>
+<div id="pron279" class="small">jī</div><div class="big" onclick="toggleIdVisibility('pron279')">机<table class="tooltiptext"><tr><td><span class='word'>趁机</span><span class='word'>机械</span><span class='word'>伺机</span></td></tr></table></div></td>
 <td>
 <div id="pron280" class="small">qì</div><div class="big" onclick="toggleIdVisibility('pron280')">汽</div></td>
 <td>
-<div id="pron281" class="small">bì</div><div class="big" onclick="toggleIdVisibility('pron281')">壁</div></td>
+<div id="pron281" class="small">bì</div><div class="big" onclick="toggleIdVisibility('pron281')">壁<table class="tooltiptext"><tr><td><span class='word'>峭壁</span></td></tr></table></div></td>
 <td>
-<div id="pron282" class="small">hǔ</div><div class="big" onclick="toggleIdVisibility('pron282')">虎</div></td>
+<div id="pron282" class="small">hǔ</div><div class="big" onclick="toggleIdVisibility('pron282')">虎<table class="tooltiptext"><tr><td><span class='word'>虎视眈眈</span></td></tr></table></div></td>
 <td>
-<div id="pron283" class="small">jiè</div><div class="big" onclick="toggleIdVisibility('pron283')">借</div></td>
+<div id="pron283" class="small">jiè</div><div class="big" onclick="toggleIdVisibility('pron283')">借<table class="tooltiptext"><tr><td><span class='word'>借鉴</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
 <div id="pron284" class="small">zhèng</div><div class="big" onclick="toggleIdVisibility('pron284')">正</div></td>
 <td>
-<div id="pron285" class="small">jiǎo</div><div class="big" onclick="toggleIdVisibility('pron285')">角</div></td>
+<div id="pron285" class="small">jiǎo</div><div class="big" onclick="toggleIdVisibility('pron285')">角<table class="tooltiptext"><tr><td><span class='word'>凤毛麟角</span></td></tr></table></div></td>
 <td>
 <div id="pron286" class="small">wén</div><div class="big" onclick="toggleIdVisibility('pron286')">蚊</div></td>
 <td>
 <div id="pron287" class="small">yǎo</div><div class="big" onclick="toggleIdVisibility('pron287')">咬</div></td>
 <td>
-<div id="pron288" class="small">zhēng</div><div class="big" onclick="toggleIdVisibility('pron288')">挣</div></td>
+<div id="pron288" class="small">zhēng</div><div class="big" onclick="toggleIdVisibility('pron288')">挣<table class="tooltiptext"><tr><td><span class='word'>挣扎</span></td></tr></table></div></td>
 <td>
-<div id="pron289" class="small">duàn</div><div class="big" onclick="toggleIdVisibility('pron289')">断</div></td>
+<div id="pron289" class="small">duàn</div><div class="big" onclick="toggleIdVisibility('pron289')">断<table class="tooltiptext"><tr><td><span class='word'>间断</span><span class='word'>判断</span><span class='word'>断齑画粥</span><span class='word'>残章断简</span><span class='word'>多谋善断</span></td></tr></table></div></td>
 <td>
 <div id="pron290" class="small">táo</div><div class="big" onclick="toggleIdVisibility('pron290')">逃</div></td>
 <td>
@@ -729,11 +773,11 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron292" class="small">ya</div><div class="big" onclick="toggleIdVisibility('pron292')">呀</div></td>
 <td>
-<div id="pron293" class="small">chí</div><div class="big" onclick="toggleIdVisibility('pron293')">池</div></td>
+<div id="pron293" class="small">chí</div><div class="big" onclick="toggleIdVisibility('pron293')">池<table class="tooltiptext"><tr><td><span class='word'>池鱼堂燕</span></td></tr></table></div></td>
 <td>
-<div id="pron294" class="small">táng</div><div class="big" onclick="toggleIdVisibility('pron294')">塘</div></td>
+<div id="pron294" class="small">táng</div><div class="big" onclick="toggleIdVisibility('pron294')">塘<table class="tooltiptext"><tr><td><span class='word'>塘沽</span></td></tr></table></div></td>
 <td>
-<div id="pron295" class="small">xíng</div><div class="big" onclick="toggleIdVisibility('pron295')">行</div></td>
+<div id="pron295" class="small">xíng</div><div class="big" onclick="toggleIdVisibility('pron295')">行<table class="tooltiptext"><tr><td><span class='word'>并行不悖</span></td></tr></table></div></td>
 <td>
 <div id="pron296" class="small">bō</div><div class="big" onclick="toggleIdVisibility('pron296')">拨</div></td>
 <td>
@@ -745,21 +789,21 @@ function toggleDisplay(element, className) {
 </tr>
 <tr>
 <td>
-<div id="pron300" class="small">zhǎng</div><div class="big" onclick="toggleIdVisibility('pron300')">掌</div></td>
+<div id="pron300" class="small">zhǎng</div><div class="big" onclick="toggleIdVisibility('pron300')">掌<table class="tooltiptext"><tr><td><span class='word'>擦掌磨拳</span><span class='word'>擦拳磨掌</span></td></tr></table></div></td>
 <td>
-<div id="pron301" class="small">wò</div><div class="big" onclick="toggleIdVisibility('pron301')">握</div></td>
+<div id="pron301" class="small">wò</div><div class="big" onclick="toggleIdVisibility('pron301')">握<table class="tooltiptext"><tr><td><span class='word'>握手</span></td></tr></table></div></td>
 <td>
-<div id="pron302" class="small">lèi</div><div class="big" onclick="toggleIdVisibility('pron302')">累</div></td>
+<div id="pron302" class="small">lèi</div><div class="big" onclick="toggleIdVisibility('pron302')">累<table class="tooltiptext"><tr><td><span class='word'>拖累</span><span class='word'>不差累黍</span></td></tr></table></div></td>
 <td>
-<div id="pron303" class="small">xī</div><div class="big" onclick="toggleIdVisibility('pron303')">息</div></td>
+<div id="pron303" class="small">xī</div><div class="big" onclick="toggleIdVisibility('pron303')">息<table class="tooltiptext"><tr><td><span class='word'>窒息</span><span class='word'>栖息</span></td></tr></table></div></td>
 <td>
 <div id="pron304" class="small">zhǎ</div><div class="big" onclick="toggleIdVisibility('pron304')">眨</div></td>
 <td>
 <div id="pron305" class="small">shǎ</div><div class="big" onclick="toggleIdVisibility('pron305')">傻</div></td>
 <td>
-<div id="pron306" class="small">zhuǎn</div><div class="big" onclick="toggleIdVisibility('pron306')">转</div></td>
+<div id="pron306" class="small">zhuǎn</div><div class="big" onclick="toggleIdVisibility('pron306')">转<table class="tooltiptext"><tr><td><span class='word'>扭转</span></td></tr></table></div></td>
 <td>
-<div id="pron307" class="small">hǎn</div><div class="big" onclick="toggleIdVisibility('pron307')">喊</div></td>
+<div id="pron307" class="small">hǎn</div><div class="big" onclick="toggleIdVisibility('pron307')">喊<table class="tooltiptext"><tr><td><span class='word'>呐喊</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
@@ -767,15 +811,15 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron309" class="small">diū</div><div class="big" onclick="toggleIdVisibility('pron309')">丢</div></td>
 <td>
-<div id="pron310" class="small">jiù</div><div class="big" onclick="toggleIdVisibility('pron310')">旧</div></td>
+<div id="pron310" class="small">jiù</div><div class="big" onclick="toggleIdVisibility('pron310')">旧<table class="tooltiptext"><tr><td><span class='word'>依旧</span></td></tr></table></div></td>
 <td>
-<div id="pron311" class="small">xīn</div><div class="big" onclick="toggleIdVisibility('pron311')">新</div></td>
+<div id="pron311" class="small">xīn</div><div class="big" onclick="toggleIdVisibility('pron311')">新<table class="tooltiptext"><tr><td><span class='word'>新鲜</span><span class='word'>崭新</span></td></tr></table></div></td>
 <td>
-<div id="pron312" class="small">zhí</div><div class="big" onclick="toggleIdVisibility('pron312')">植</div></td>
+<div id="pron312" class="small">zhí</div><div class="big" onclick="toggleIdVisibility('pron312')">植<table class="tooltiptext"><tr><td><span class='word'>移植</span></td></tr></table></div></td>
 <td>
-<div id="pron313" class="small">wù</div><div class="big" onclick="toggleIdVisibility('pron313')">物</div></td>
+<div id="pron313" class="small">wù</div><div class="big" onclick="toggleIdVisibility('pron313')">物<table class="tooltiptext"><tr><td><span class='word'>探囊取物</span><span class='word'>暴殄天物</span></td></tr></table></div></td>
 <td>
-<div id="pron314" class="small">hǎi</div><div class="big" onclick="toggleIdVisibility('pron314')">海</div></td>
+<div id="pron314" class="small">hǎi</div><div class="big" onclick="toggleIdVisibility('pron314')">海<table class="tooltiptext"><tr><td><span class='word'>八仙过海</span><span class='word'>海晏河清</span><span class='word'>海峡</span><span class='word'>海滨</span><span class='word'>海疆</span><span class='word'>沧海一粟</span></td></tr></table></div></td>
 <td>
 <div id="pron315" class="small">chì</div><div class="big" onclick="toggleIdVisibility('pron315')">翅</div></td>
 </tr>
@@ -789,35 +833,35 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron319" class="small">yīng</div><div class="big" onclick="toggleIdVisibility('pron319')">英</div></td>
 <td>
-<div id="pron320" class="small">zhǔn</div><div class="big" onclick="toggleIdVisibility('pron320')">准</div></td>
+<div id="pron320" class="small">zhǔn</div><div class="big" onclick="toggleIdVisibility('pron320')">准<table class="tooltiptext"><tr><td><span class='word'>瞄准</span></td></tr></table></div></td>
 <td>
 <div id="pron321" class="small">bèi</div><div class="big" onclick="toggleIdVisibility('pron321')">备</div></td>
 <td>
-<div id="pron322" class="small">jiàng</div><div class="big" onclick="toggleIdVisibility('pron322')">降</div></td>
+<div id="pron322" class="small">jiàng</div><div class="big" onclick="toggleIdVisibility('pron322')">降<table class="tooltiptext"><tr><td><span class='word'>降落</span></td></tr></table></div></td>
 <td>
-<div id="pron323" class="small">wēi</div><div class="big" onclick="toggleIdVisibility('pron323')">微</div></td>
+<div id="pron323" class="small">wēi</div><div class="big" onclick="toggleIdVisibility('pron323')">微<table class="tooltiptext"><tr><td><span class='word'>稍微</span><span class='word'>式微</span><span class='word'>微弱</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron324" class="small">fēn</div><div class="big" onclick="toggleIdVisibility('pron324')">纷</div></td>
+<div id="pron324" class="small">fēn</div><div class="big" onclick="toggleIdVisibility('pron324')">纷<table class="tooltiptext"><tr><td><span class='word'>纷至沓来</span></td></tr></table></div></td>
 <td>
-<div id="pron325" class="small">fā</div><div class="big" onclick="toggleIdVisibility('pron325')">发</div></td>
+<div id="pron325" class="small">fā</div><div class="big" onclick="toggleIdVisibility('pron325')">发<table class="tooltiptext"><tr><td><span class='word'>发家致富</span><span class='word'>启发</span><span class='word'>颁发</span><span class='word'>暴发</span><span class='word'>发愁</span><span class='word'>抒发</span><span class='word'>焕发</span><span class='word'>萌发</span><span class='word'>爆发</span><span class='word'>发奸擿伏</span><span class='word'>发指眦裂</span><span class='word'>发聋振聩</span><span class='word'>踔厉风发</span></td></tr></table></div></td>
 <td>
-<div id="pron326" class="small">cāng</div><div class="big" onclick="toggleIdVisibility('pron326')">苍</div></td>
+<div id="pron326" class="small">cāng</div><div class="big" onclick="toggleIdVisibility('pron326')">苍<table class="tooltiptext"><tr><td><span class='word'>苍劲</span></td></tr></table></div></td>
 <td>
-<div id="pron327" class="small">dài</div><div class="big" onclick="toggleIdVisibility('pron327')">带</div></td>
+<div id="pron327" class="small">dài</div><div class="big" onclick="toggleIdVisibility('pron327')">带<table class="tooltiptext"><tr><td><span class='word'>峨冠博带</span><span class='word'>携带</span></td></tr></table></div></td>
 <td>
 <div id="pron328" class="small">cì</div><div class="big" onclick="toggleIdVisibility('pron328')">刺</div></td>
 <td>
 <div id="pron329" class="small">liú</div><div class="big" onclick="toggleIdVisibility('pron329')">榴</div></td>
 <td>
-<div id="pron330" class="small">dǎn</div><div class="big" onclick="toggleIdVisibility('pron330')">胆</div></td>
+<div id="pron330" class="small">dǎn</div><div class="big" onclick="toggleIdVisibility('pron330')">胆<table class="tooltiptext"><tr><td><span class='word'>胆怯</span></td></tr></table></div></td>
 <td>
 <div id="pron331" class="small">wān</div><div class="big" onclick="toggleIdVisibility('pron331')">豌</div></td>
 </tr>
 <tr>
 <td>
-<div id="pron332" class="small">dòu</div><div class="big" onclick="toggleIdVisibility('pron332')">豆</div></td>
+<div id="pron332" class="small">dòu</div><div class="big" onclick="toggleIdVisibility('pron332')">豆<table class="tooltiptext"><tr><td><span class='word'>郫县豆瓣</span><span class='word'>豆蔻</span></td></tr></table></div></td>
 <td>
 <div id="pron333" class="small">gèng</div><div class="big" onclick="toggleIdVisibility('pron333')">更</div></td>
 <td>
@@ -827,83 +871,83 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron336" class="small">pā</div><div class="big" onclick="toggleIdVisibility('pron336')">啪</div></td>
 <td>
-<div id="pron337" class="small">zhà</div><div class="big" onclick="toggleIdVisibility('pron337')">炸</div></td>
+<div id="pron337" class="small">zhà</div><div class="big" onclick="toggleIdVisibility('pron337')">炸<table class="tooltiptext"><tr><td><span class='word'>爆炸</span></td></tr></table></div></td>
 <td>
-<div id="pron338" class="small">lí</div><div class="big" onclick="toggleIdVisibility('pron338')">离</div></td>
+<div id="pron338" class="small">lí</div><div class="big" onclick="toggleIdVisibility('pron338')">离<table class="tooltiptext"><tr><td><span class='word'>扑朔迷离</span><span class='word'>距离</span></td></tr></table></div></td>
 <td>
 <div id="pron339" class="small">zǎi</div><div class="big" onclick="toggleIdVisibility('pron339')">仔</div></td>
 </tr>
 <tr>
 <td>
-<div id="pron340" class="small">guān</div><div class="big" onclick="toggleIdVisibility('pron340')">观</div></td>
+<div id="pron340" class="small">guān</div><div class="big" onclick="toggleIdVisibility('pron340')">观<table class="tooltiptext"><tr><td><span class='word'>改观</span></td></tr></table></div></td>
 <td>
-<div id="pron341" class="small">chá</div><div class="big" onclick="toggleIdVisibility('pron341')">察</div></td>
+<div id="pron341" class="small">chá</div><div class="big" onclick="toggleIdVisibility('pron341')">察<table class="tooltiptext"><tr><td><span class='word'>明察秋毫</span><span class='word'>警察</span></td></tr></table></div></td>
 <td>
-<div id="pron342" class="small">shì</div><div class="big" onclick="toggleIdVisibility('pron342')">识</div></td>
+<div id="pron342" class="small">shì</div><div class="big" onclick="toggleIdVisibility('pron342')">识<table class="tooltiptext"><tr><td><span class='word'>认识</span><span class='word'>识荆</span><span class='word'>博闻强识</span></td></tr></table></div></td>
 <td>
-<div id="pron343" class="small">cū</div><div class="big" onclick="toggleIdVisibility('pron343')">粗</div></td>
+<div id="pron343" class="small">cū</div><div class="big" onclick="toggleIdVisibility('pron343')">粗<table class="tooltiptext"><tr><td><span class='word'>粗糙</span></td></tr></table></div></td>
 <td>
-<div id="pron344" class="small">què</div><div class="big" onclick="toggleIdVisibility('pron344')">却</div></td>
+<div id="pron344" class="small">què</div><div class="big" onclick="toggleIdVisibility('pron344')">却<table class="tooltiptext"><tr><td><span class='word'>却之不恭</span></td></tr></table></div></td>
 <td>
-<div id="pron345" class="small">dé</div><div class="big" onclick="toggleIdVisibility('pron345')">得</div></td>
+<div id="pron345" class="small">dé</div><div class="big" onclick="toggleIdVisibility('pron345')">得<table class="tooltiptext"><tr><td><span class='word'>相得益彰</span><span class='word'>唾手可得</span><span class='word'>值得</span><span class='word'>获得</span></td></tr></table></div></td>
 <td>
-<div id="pron346" class="small">tiě</div><div class="big" onclick="toggleIdVisibility('pron346')">铁</div></td>
+<div id="pron346" class="small">tiě</div><div class="big" onclick="toggleIdVisibility('pron346')">铁<table class="tooltiptext"><tr><td><span class='word'>斩钉截铁</span><span class='word'>钢铁</span></td></tr></table></div></td>
 <td>
-<div id="pron347" class="small">bàng</div><div class="big" onclick="toggleIdVisibility('pron347')">棒</div></td>
+<div id="pron347" class="small">bàng</div><div class="big" onclick="toggleIdVisibility('pron347')">棒<table class="tooltiptext"><tr><td><span class='word'>棒槌</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron348" class="small">mó</div><div class="big" onclick="toggleIdVisibility('pron348')">磨</div></td>
+<div id="pron348" class="small">mó</div><div class="big" onclick="toggleIdVisibility('pron348')">磨<table class="tooltiptext"><tr><td><span class='word'>磨杵成针</span><span class='word'>擦掌磨拳</span><span class='word'>刮垢磨光</span><span class='word'>擦拳磨掌</span></td></tr></table></div></td>
 <td>
-<div id="pron349" class="small">zhēn</div><div class="big" onclick="toggleIdVisibility('pron349')">针</div></td>
+<div id="pron349" class="small">zhēn</div><div class="big" onclick="toggleIdVisibility('pron349')">针<table class="tooltiptext"><tr><td><span class='word'>如坐针毡</span><span class='word'>针灸</span><span class='word'>磨杵成针</span><span class='word'>螫针</span></td></tr></table></div></td>
 <td>
-<div id="pron350" class="small">míng</div><div class="big" onclick="toggleIdVisibility('pron350')">名</div></td>
+<div id="pron350" class="small">míng</div><div class="big" onclick="toggleIdVisibility('pron350')">名<table class="tooltiptext"><tr><td><span class='word'>名落孙山</span><span class='word'>沽名钓誉</span></td></tr></table></div></td>
 <td>
-<div id="pron351" class="small">lǐ</div><div class="big" onclick="toggleIdVisibility('pron351')">李</div></td>
+<div id="pron351" class="small">lǐ</div><div class="big" onclick="toggleIdVisibility('pron351')">李<table class="tooltiptext"><tr><td><span class='word'>报李投桃</span></td></tr></table></div></td>
 <td>
-<div id="pron352" class="small">xué</div><div class="big" onclick="toggleIdVisibility('pron352')">学</div></td>
+<div id="pron352" class="small">xué</div><div class="big" onclick="toggleIdVisibility('pron352')">学<table class="tooltiptext"><tr><td><span class='word'>辍学</span><span class='word'>才疏学浅</span></td></tr></table></div></td>
 <td>
-<div id="pron353" class="small">xí</div><div class="big" onclick="toggleIdVisibility('pron353')">习</div></td>
+<div id="pron353" class="small">xí</div><div class="big" onclick="toggleIdVisibility('pron353')">习<table class="tooltiptext"><tr><td><span class='word'>习惯</span><span class='word'>练习</span></td></tr></table></div></td>
 <td>
 <div id="pron354" class="small">kùn</div><div class="big" onclick="toggleIdVisibility('pron354')">困</div></td>
 <td>
-<div id="pron355" class="small">dú</div><div class="big" onclick="toggleIdVisibility('pron355')">读</div></td>
+<div id="pron355" class="small">dú</div><div class="big" onclick="toggleIdVisibility('pron355')">读<table class="tooltiptext"><tr><td><span class='word'>朗读</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron356" class="small">shū</div><div class="big" onclick="toggleIdVisibility('pron356')">书</div></td>
+<div id="pron356" class="small">shū</div><div class="big" onclick="toggleIdVisibility('pron356')">书<table class="tooltiptext"><tr><td><span class='word'>秉笔直书</span></td></tr></table></div></td>
 <td>
 <div id="pron357" class="small">kè</div><div class="big" onclick="toggleIdVisibility('pron357')">课</div></td>
 <td>
-<div id="pron358" class="small">jiào</div><div class="big" onclick="toggleIdVisibility('pron358')">教</div></td>
+<div id="pron358" class="small">jiào</div><div class="big" onclick="toggleIdVisibility('pron358')">教<table class="tooltiptext"><tr><td><span class='word'>教育</span><span class='word'>教诲</span><span class='word'>教授</span></td></tr></table></div></td>
 <td>
 <div id="pron359" class="small">shì</div><div class="big" onclick="toggleIdVisibility('pron359')">室</div></td>
 <td>
-<div id="pron360" class="small">liū</div><div class="big" onclick="toggleIdVisibility('pron360')">溜</div></td>
+<div id="pron360" class="small">liū</div><div class="big" onclick="toggleIdVisibility('pron360')">溜<table class="tooltiptext"><tr><td><span class='word'>溜走</span><span class='word'>溜槽</span></td></tr></table></div></td>
 <td>
-<div id="pron361" class="small">gēn</div><div class="big" onclick="toggleIdVisibility('pron361')">根</div></td>
+<div id="pron361" class="small">gēn</div><div class="big" onclick="toggleIdVisibility('pron361')">根<table class="tooltiptext"><tr><td><span class='word'>根据</span><span class='word'>扎根</span></td></tr></table></div></td>
 <td>
-<div id="pron362" class="small">fā</div><div class="big" onclick="toggleIdVisibility('pron362')">发</div></td>
+<div id="pron362" class="small">fā</div><div class="big" onclick="toggleIdVisibility('pron362')">发<table class="tooltiptext"><tr><td><span class='word'>发家致富</span><span class='word'>启发</span><span class='word'>颁发</span><span class='word'>暴发</span><span class='word'>发愁</span><span class='word'>抒发</span><span class='word'>焕发</span><span class='word'>萌发</span><span class='word'>爆发</span><span class='word'>发奸擿伏</span><span class='word'>发指眦裂</span><span class='word'>发聋振聩</span><span class='word'>踔厉风发</span></td></tr></table></div></td>
 <td>
-<div id="pron363" class="small">nǎi</div><div class="big" onclick="toggleIdVisibility('pron363')">奶</div></td>
+<div id="pron363" class="small">nǎi</div><div class="big" onclick="toggleIdVisibility('pron363')">奶<table class="tooltiptext"><tr><td><span class='word'>漾奶</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
-<div id="pron364" class="small">wèi</div><div class="big" onclick="toggleIdVisibility('pron364')">位</div></td>
+<div id="pron364" class="small">wèi</div><div class="big" onclick="toggleIdVisibility('pron364')">位<table class="tooltiptext"><tr><td><span class='word'>位置</span><span class='word'>岗位</span><span class='word'>诸位</span></td></tr></table></div></td>
 <td>
-<div id="pron365" class="small">gàn</div><div class="big" onclick="toggleIdVisibility('pron365')">干</div></td>
+<div id="pron365" class="small">gàn</div><div class="big" onclick="toggleIdVisibility('pron365')">干<table class="tooltiptext"><tr><td><span class='word'>干哕</span><span class='word'>干涸</span></td></tr></table></div></td>
 <td>
 <div id="pron366" class="small">yìng</div><div class="big" onclick="toggleIdVisibility('pron366')">硬</div></td>
 <td>
-<div id="pron367" class="small">dìng</div><div class="big" onclick="toggleIdVisibility('pron367')">定</div></td>
+<div id="pron367" class="small">dìng</div><div class="big" onclick="toggleIdVisibility('pron367')">定<table class="tooltiptext"><tr><td><span class='word'>拟定</span></td></tr></table></div></td>
 <td>
 <div id="pron368" class="small">zǒng</div><div class="big" onclick="toggleIdVisibility('pron368')">总</div></td>
 <td>
 <div id="pron369" class="small">jué</div><div class="big" onclick="toggleIdVisibility('pron369')">决</div></td>
 <td>
-<div id="pron370" class="small">shǐ</div><div class="big" onclick="toggleIdVisibility('pron370')">始</div></td>
+<div id="pron370" class="small">shǐ</div><div class="big" onclick="toggleIdVisibility('pron370')">始<table class="tooltiptext"><tr><td><span class='word'>始作俑者</span></td></tr></table></div></td>
 <td>
-<div id="pron371" class="small">wěi</div><div class="big" onclick="toggleIdVisibility('pron371')">伟</div></td>
+<div id="pron371" class="small">wěi</div><div class="big" onclick="toggleIdVisibility('pron371')">伟<table class="tooltiptext"><tr><td><span class='word'>雄伟</span><span class='word'>宏伟</span></td></tr></table></div></td>
 </tr>
 <tr>
 <td>
@@ -911,16 +955,16 @@ function toggleDisplay(element, className) {
 <td>
 <div id="pron373" class="small">niàn</div><div class="big" onclick="toggleIdVisibility('pron373')">念</div></td>
 <td>
-<div id="pron374" class="small">shǒu</div><div class="big" onclick="toggleIdVisibility('pron374')">首</div></td>
+<div id="pron374" class="small">shǒu</div><div class="big" onclick="toggleIdVisibility('pron374')">首<table class="tooltiptext"><tr><td><span class='word'>枭首示众</span><span class='word'>蓦然回首</span></td></tr></table></div></td>
 <td>
-<div id="pron375" class="small">yí</div><div class="big" onclick="toggleIdVisibility('pron375')">疑</div></td>
+<div id="pron375" class="small">yí</div><div class="big" onclick="toggleIdVisibility('pron375')">疑<table class="tooltiptext"><tr><td><span class='word'>疑惑</span><span class='word'>嫌疑</span></td></tr></table></div></td>
 <td>
 <div id="pron376" class="small">shuāng</div><div class="big" onclick="toggleIdVisibility('pron376')">霜</div></td>
 <td>
-<div id="pron377" class="small">wàng</div><div class="big" onclick="toggleIdVisibility('pron377')">望</div></td>
+<div id="pron377" class="small">wàng</div><div class="big" onclick="toggleIdVisibility('pron377')">望<table class="tooltiptext"><tr><td><span class='word'>仰望</span><span class='word'>眺望</span><span class='word'>瞭望</span><span class='word'>鹰觑鹘望</span></td></tr></table></div></td>
 <td>
-<div id="pron378" class="small">sī</div><div class="big" onclick="toggleIdVisibility('pron378')">思</div></td>
+<div id="pron378" class="small">sī</div><div class="big" onclick="toggleIdVisibility('pron378')">思<table class="tooltiptext"><tr><td><span class='word'>匪夷所思</span><span class='word'>乐不思蜀</span><span class='word'>构思</span><span class='word'>孙思邈</span></td></tr></table></div></td>
 <td>
-<div id="pron379" class="small">xiāng</div><div class="big" onclick="toggleIdVisibility('pron379')">乡</div></td>
+<div id="pron379" class="small">xiāng</div><div class="big" onclick="toggleIdVisibility('pron379')">乡<table class="tooltiptext"><tr><td><span class='word'>穷乡僻壤</span></td></tr></table></div></td>
 </tr>
 </tbody></table></body></html>
