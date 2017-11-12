@@ -72,11 +72,11 @@ def make_word_list(base_dir, file_name, words_list_file, col_count,  withCh, wit
 
 
 if __name__ == '__main__':
-    make_word_list('/workplace/Git/MLPCards', 'Grade1', 'small.txt', 1, True, True)
-    make_word_list('/workplace/Git/MLPCards', 'Grade2', 'small.txt', 1, True, True)
-    make_word_list('/workplace/Git/MLPCards', 'Grade3', 'small.txt', 1, True, True)
-    make_word_list('/workplace/Git/MLPCards', 'Grade4', 'small.txt', 1, True, True)
-    make_word_list('/workplace/Git/MLPCards', 'Grade5', 'small.txt', 1, True, True)
+    make_word_list('/workplace/Git/MLPCards', 'Grade1', 'PrimarySchoolWords', 1, True, True)
+    make_word_list('/workplace/Git/MLPCards', 'Grade2', 'PrimarySchoolWords', 1, True, True)
+    make_word_list('/workplace/Git/MLPCards', 'Grade3', 'PrimarySchoolWords', 1, True, True)
+    make_word_list('/workplace/Git/MLPCards', 'Grade4', 'PrimarySchoolWords', 1, True, True)
+    make_word_list('/workplace/Git/MLPCards', 'Grade5', 'PrimarySchoolWords', 1, True, True)
 
 
 #https://www.heritagechinese.com/media/resources/5%E5%B9%B4%E7%BA%A7%E7%94%9F%E5%AD%97Poster.pdf
