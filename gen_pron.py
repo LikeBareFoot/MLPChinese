@@ -28,7 +28,8 @@ def mark_pron(base_dir, file_name, word_list):
         inject_file(fw, './cardstyle.css')
         inject_file(fw, './toggleVisibility.js')
         fw.write("</head><body>\n")
-        fw.write("<button onclick=\"toggleDisplay(this, '{}')\" value='1'>隐藏拼音</button>".format(pron_style))
+        fw.write("<button onclick=\"toggleDisplay(this, '{}')\" value='1'>隐藏拼音</button>\n".format(pron_style))
+        fw.write("<button onclick=\"toggleClassVisibility('small')\">反向显示拼音</button>\n")
         fw.write("<table><tbody>")
         with open('{}/{}'.format(base_dir, file_name)) as fo:
             for line_of_text in fo:
@@ -48,10 +49,14 @@ def mark_pron(base_dir, file_name, word_list):
 
 def write_words(fw, reverse_idx, ch):
     if ch in reverse_idx:
-        fw.write("<table class=\"tooltiptext\"><tr><td>")
+        fw.write("<table class=\"tooltiptext\"><tr>")
         for val in reverse_idx[ch]:
-            fw.write("<span class='word'>{}</span>".format(val))
-        fw.write("</td></tr></table>")
+            pron = pinyin(val)
+            fw.write("<td>")
+            fw.write("<div class='small'>{}</div>".format(pron))
+            fw.write("<div class='word'>{}</div>".format(val))
+            fw.write("</td>")
+        fw.write("</tr></table>")
 
 if __name__ == '__main__':
     mark_pron('/workplace/MLPChinese', 'Grade1', 'PrimarySchoolWords')
