@@ -49,14 +49,25 @@ def mark_pron(base_dir, file_name, word_list):
 
 def write_words(fw, reverse_idx, ch):
     if ch in reverse_idx:
-        fw.write("<table class=\"tooltiptext\"><tr>")
+        count = 0
+        fw.write("<table class=\"tooltiptext\">")
+        if count % 3 == 0:
+            fw.write("<tr>")
         for val in reverse_idx[ch]:
             pron = pinyin(val)
             fw.write("<td>")
-            fw.write("<div class='small'>{}</div>".format(pron))
+            fw.write("<div class='small'>")
+            for p in pron:
+                fw.write("{}&nbsp;".format(p[0]))
+            fw.write("</div>")
             fw.write("<div class='word'>{}</div>".format(val))
             fw.write("</td>")
-        fw.write("</tr></table>")
+            if count % 3 == 2:
+                fw.write("</tr>")
+            count = count + 1
+        if count % 3 == 0:
+            fw.write("</tr>")
+        fw.write("</table>")
 
 if __name__ == '__main__':
     mark_pron('/workplace/MLPChinese', 'Grade1', 'PrimarySchoolWords')
